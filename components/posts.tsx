@@ -1,12 +1,12 @@
 import Link from 'next/link'
 
 import { formatDate } from '@/lib/utils'
-import { FileMetadata } from '@/lib/fileParser'
+import { FileMetadata } from '@/data/file-constants'
 
-export default function Posts({ posts }: { posts: FileMetadata[] }) {
+export default function Posts({ metadata = [] }: { metadata: FileMetadata[] }) {
   return (
     <ul className='flex flex-col gap-8'>
-      {posts.map((post: FileMetadata) => (
+      {metadata.map((post: FileMetadata) => (
         <li key={post.slug}>
           <Link
             href={`/posts/${post.slug}`}

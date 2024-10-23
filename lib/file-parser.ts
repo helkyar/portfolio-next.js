@@ -1,20 +1,8 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-
-export type File = {
-  metadata: FileMetadata
-  content: string
-}
-
-export type FileMetadata = {
-  title?: string
-  summary?: string
-  image?: string
-  author?: string
-  publishedAt?: string
-  slug: string
-}
+import { notFound } from 'next/navigation'
+import { File, FileContent, FileMetadata } from '@/data/file-constants'
 
 const encoding = 'utf8'
 export async function getFilesBySlug(
@@ -56,4 +44,27 @@ export function getFileMetadata(
   const fileContent = fs.readFileSync(filePath, { encoding })
   const { data } = matter(fileContent)
   return { ...data, slug }
+}
+
+export async function getFileContent(
+  params: { slug: string },
+  searchBySlug: (slug: string) => Promise<File | null>,
+): Promise<FileContent> {
+  const { slug } = params
+  const project = await searchBySlug(slug)
+
+  if (!project) {
+    notFound()
+  }
+
+  const { metadata, content } = project
+  const { title, image, author, publishedAt } = metadata
+
+  return {
+    content,
+    title,
+    image,
+    author,
+    publishedAt,
+  }
 }

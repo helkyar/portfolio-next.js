@@ -1,12 +1,16 @@
-import { FileMetadata } from '@/lib/fileParser'
+import { FileMetadata } from '@/data/file-constants'
 import { formatDate } from '@/lib/utils'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function Projects({ projects }: { projects: FileMetadata[] }) {
+export default function Projects({
+  metadata = [],
+}: {
+  metadata: FileMetadata[]
+}) {
   return (
-    <ul className='grid grid-cols-1 gap-8 sm:grid-cols-2'>
-      {projects.map((project) => (
+    <ul className='grid grid-cols-1 gap-8 sm:min-w-[400px] sm:grid-cols-[repeat(auto-fill,_minmax(200px,_1fr))]'>
+      {metadata.map((project) => (
         <li key={project.slug} className='group relative'>
           <Link href={`/projects/${project.slug}`}>
             {project.image && (

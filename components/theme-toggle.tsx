@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
 import { Button } from '@/components/ui/button'
 import { MoonIcon, SunIcon } from '@radix-ui/react-icons'
-import { Theme } from '@/data/themeConstants'
+import { Theme } from '@/data/theme-constants'
 
 const t = { tooltip: 'Toggle theme' }
 
