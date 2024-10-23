@@ -3,13 +3,9 @@ import React, { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
 import { Button } from '@/components/ui/button'
 import { MoonIcon, SunIcon } from '@radix-ui/react-icons'
+import { Theme } from '@/data/themeConstants'
 
-// constants
-const enum Theme {
-  Dark = 'dark',
-  Light = 'light',
-}
-const toggleDarkMode = 'Toggle theme'
+const t = { tooltip: 'Toggle theme' }
 
 // component
 const ThemeToggle = () => {
@@ -35,7 +31,7 @@ const ThemeToggle = () => {
       ) : (
         <MoonIcon className='size-4 text-sky-950' />
       )}
-      <span className='sr-only'>{toggleDarkMode}</span>
+      <span className='sr-only'>{t.tooltip}</span>
     </Button>
   )
 }
