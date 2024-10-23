@@ -54,7 +54,7 @@ export default function NewsletterForm() {
             onSubmit={handleSubmit(processForm)}
             className='flex flex-col items-start gap-3'
           >
-            <div className='w-full'>
+            <div className='flex w-full flex-col items-start gap-3 sm:flex-row'>
               <Input
                 type='email'
                 id='email'
@@ -68,9 +68,11 @@ export default function NewsletterForm() {
                   {errors.email.message}
                 </p>
               )}
-            </div>
-            <div className='w-full'>
-              <Button type='submit' disabled={isSubmitting}>
+              <Button
+                type='submit'
+                disabled={isSubmitting}
+                className='w-full disabled:opacity-50 sm:w-fit'
+              >
                 {isSubmitting ? t.is_submitting : t.submit}
               </Button>
             </div>

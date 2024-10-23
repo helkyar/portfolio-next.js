@@ -10,11 +10,11 @@ export default async function RecentProjects() {
   const projects = await getProjects(4)
   return (
     <section className='pb-24'>
-      <h2 className='title mb-12'>{t.title}</h2>
+      <h2 className='title mb-4'>{t.title}</h2>
       <Projects projects={projects} />
       <Link
         href={'/projects'}
-        className='hover:text-foregroundS mt-8 inline-flex items-center gap-2 text-muted-foreground underline decoration-1 underline-offset-2 transition-colors'
+        className='hover:text-foregroundS mt-4 inline-flex items-center gap-2 text-muted-foreground underline decoration-1 underline-offset-2 transition-colors hover:text-foreground'
       >
         <span>{t.link}</span>
       </Link>

@@ -12,11 +12,11 @@ export default async function RecentPosts() {
   return (
     <section>
       <div>
-        <h2 className='title mb-12'>{t.title}</h2>
+        <h2 className='title mb-4'>{t.title}</h2>
         <Posts posts={posts} />
         <Link
           href={'/posts'}
-          className='mt-8 inline-flex items-center gap-2 text-muted-foreground underline decoration-1 underline-offset-2 transition-colors hover:text-foreground'
+          className='mt-4 inline-flex items-center gap-2 text-muted-foreground underline decoration-1 underline-offset-2 transition-colors hover:text-foreground'
         >
           <span>{t.link}</span>
         </Link>

@@ -7,7 +7,7 @@ import React from 'react'
 const Home = () => {
   return (
     <section className='section py-24'>
-      <div className='max-w-3x2 container'>
+      <div className='max-w-3x2 container flex flex-col gap-y-8'>
         <Intro />
         <RecentPosts />
         <RecentProjects />

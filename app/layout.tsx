@@ -47,7 +47,7 @@ export default function RootLayout({
       >
         <Providers>
           <Header />
-          <main className='grow'>{children}</main>
+          <main className='grow px-4'>{children}</main>
           <Footer />
         </Providers>
       </body>

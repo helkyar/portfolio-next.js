@@ -10,7 +10,7 @@ type Props = {
 }
 
 export default function SearchBar({ onChange, query, reset }: Props) {
-  const isProjectFiltered = query.length > 0
+  const isQueryFiltered = query.length > 0
   return (
     <div className='mb-12 flex items-center gap-3'>
       <Input
@@ -20,7 +20,7 @@ export default function SearchBar({ onChange, query, reset }: Props) {
         value={query}
         onChange={onChange}
       />
-      {isProjectFiltered && (
+      {isQueryFiltered && (
         <Button
           size='sm'
           variant='secondary'

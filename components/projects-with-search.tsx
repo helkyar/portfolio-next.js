@@ -25,7 +25,7 @@ export default function ProjectsWithSearch({
   return (
     <div>
       <SearchBar onChange={changeFilter} query={query} reset={resetFilter} />
-      <Projects metadata={filteredProjects} />
+      <Projects projects={filteredProjects} />
     </div>
   )
 }

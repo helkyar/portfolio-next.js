@@ -2,15 +2,20 @@
 
 import { FileMetadata } from '@/data/file-constants'
 import { useState } from 'react'
-import Posts from '@/components/posts'
 import SearchBar from '@/components/search-bar'
 
-export default function PostsWithSearch({ posts }: { posts: FileMetadata[] }) {
+export default function ComponentWithSearch({
+  dataArray,
+  Component,
+}: {
+  dataArray: FileMetadata[]
+  Component: React.FC<{ data: FileMetadata[] }>
+}) {
   const [query, setQuery] = useState('')
-  const filteredPosts = posts.filter(
-    (post) =>
-      post.title?.toLowerCase().includes(query.toLowerCase()) ||
-      post.summary?.toLowerCase().includes(query.toLowerCase()),
+  const filteredData = dataArray.filter(
+    (data) =>
+      data.title?.toLowerCase().includes(query.toLowerCase()) ||
+      data.summary?.toLowerCase().includes(query.toLowerCase()),
   )
   function resetFilter() {
     setQuery('')
@@ -21,7 +26,7 @@ export default function PostsWithSearch({ posts }: { posts: FileMetadata[] }) {
   return (
     <div>
       <SearchBar onChange={changeFilter} query={query} reset={resetFilter} />
-      <Posts posts={filteredPosts} />
+      <Component data={filteredData} />
     </div>
   )
 }
