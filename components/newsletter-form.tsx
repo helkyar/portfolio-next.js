@@ -4,11 +4,11 @@ import { resolver, schema } from '@/lib/schema-validation'
 import { NewsletterFormSchema } from '@/lib/schemas'
 import { useForm, SubmitHandler } from '@/lib/form-hooks'
 import { subscribe } from '@/lib/actions'
-import { toast } from './ui/toast'
+import { toast } from '@/components/ui/toast'
 import Link from 'next/link'
-import { Button } from './ui/button'
-import { Input } from './ui/input'
-import { Card, CardContent } from './ui/card'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Card, CardContent } from '@/components/ui/card'
 
 const t = {
   error: 'Something went wrong. Please try again.',

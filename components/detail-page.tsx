@@ -1,6 +1,6 @@
 import { ArrowLeftIcon } from '@radix-ui/react-icons'
-import MDXContent from './mdx-content'
-import NewsletterForm from './newsletter-form'
+import MDXContent from '@/components/mdx-content'
+import NewsletterForm from '@/components/newsletter-form'
 import Link from 'next/link'
 import Image from 'next/image'
 import { formatDate } from '@/lib/utils'

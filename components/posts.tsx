@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { formatDate } from '@/lib/utils'
 import { FileMetadata } from '@/data/file-constants'
-import { Card } from './ui/card'
+import { Card } from '@/components/ui/card'
 
 export default function Posts({ posts }: { posts: FileMetadata[] }) {
   return (

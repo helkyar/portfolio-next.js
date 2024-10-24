@@ -19,3 +19,6 @@ export type FileContent = {
   publishedAt: string | undefined
   author: string | undefined
 }
+
+export const DEFAULT_POSTS_PREVIEW = 2
+export const DEFAULT_PROJECTS_PREVIEW = 2

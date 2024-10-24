@@ -1,13 +1,14 @@
 import Link from 'next/link'
-import Posts from './posts'
+import Posts from '@/components/posts'
 import { getPosts } from '@/lib/posts'
+import { DEFAULT_POSTS_PREVIEW } from '@/data/file-constants'
 
 const t = {
   title: 'Recent Posts',
   link: 'View all posts',
 }
 export default async function RecentPosts() {
-  const posts = await getPosts(4)
+  const posts = await getPosts(DEFAULT_POSTS_PREVIEW)
 
   return (
     <section>

@@ -1,7 +1,7 @@
 'use client'
 import PropTypes from 'prop-types'
 import { ThemeProvider, useTheme } from 'next-themes'
-import { Toaster } from './ui/toast'
+import { Toaster } from '@/components/ui/toast'
 import { Theme } from '@/data/theme-constants'
 
 // component

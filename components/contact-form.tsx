@@ -4,14 +4,8 @@ import { ContactFormSchema } from '@/lib/schemas'
 import { SubmitHandler, useForm } from '@/lib/form-hooks'
 import { sendEmail } from '@/lib/actions'
 import Link from 'next/link'
-import {
-  toast,
-  BackgroundPatternIcon,
-  Button,
-  Textarea,
-  Input,
-} from '@/components/ui'
-import NewsletterForm from './newsletter-form'
+import { toast, Button, Textarea, Input } from '@/components/ui'
+import NewsletterForm from '@/components/newsletter-form'
 
 const t = {
   submitting: 'Submitting...',
@@ -46,7 +40,7 @@ export default function ContactForm() {
       return
     }
     toast.success('Message sent successfully!')
-    reset
+    reset()
   }
 
   return (
