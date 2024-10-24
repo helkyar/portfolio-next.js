@@ -1,8 +1,8 @@
 'use client'
 
-import { resolver, schema } from '@/hooks/schema-validation'
+import { resolver, schema } from '@/lib/schema-validation'
 import { NewsletterFormSchema } from '@/lib/schemas'
-import { useForm, SubmitHandler } from '@/hooks/form-hooks'
+import { useForm, SubmitHandler } from '@/lib/form-hooks'
 import { subscribe } from '@/lib/actions'
 import { toast } from './ui/toast'
 import Link from 'next/link'

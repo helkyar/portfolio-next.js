@@ -1,7 +1,7 @@
 'use client'
-import { resolver, schema } from '@/hooks/schema-validation'
+import { resolver, schema } from '@/lib/schema-validation'
 import { ContactFormSchema } from '@/lib/schemas'
-import { SubmitHandler, useForm } from '@/hooks/form-hooks'
+import { SubmitHandler, useForm } from '@/lib/form-hooks'
 import { sendEmail } from '@/lib/actions'
 import Link from 'next/link'
 import {

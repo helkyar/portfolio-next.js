@@ -1,7 +1,7 @@
 'use server'
 import { Resend } from 'resend'
 import { ContactFormSchema, NewsletterFormSchema } from '@/lib/schemas'
-import { schema } from '@/hooks/schema-validation'
+import { schema } from '@/lib/schema-validation'
 import ContactFormEmail from '@/email-template/contact-form-email'
 
 type ContactFormInputs = schema.infer<typeof ContactFormSchema>

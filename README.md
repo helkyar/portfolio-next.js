@@ -48,3 +48,11 @@ from the creators of Next.js.
 Check out
 [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying)
 for more details.
+
+## Next Steps
+
+- Tests
+- Update projects list with READMEs of github repos
+- Functional contact form with database
+- Apply an appropriate architecture/design pattern to facilitate extensibility
+  and readability

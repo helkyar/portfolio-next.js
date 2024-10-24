@@ -1,4 +1,4 @@
-import { schema } from '@/hooks/schema-validation'
+import { schema } from '@/lib/schema-validation'
 
 export const ContactFormSchema = schema.object({
   name: schema
