@@ -8,12 +8,12 @@ export async function generateStaticParams() {
   return slugs
 }
 
-export default async function PostDetailPage({
+export default async function ProjectDetailPage({
   params,
 }: {
   params: { slug: string }
 }) {
   const content = await getFileContent(params, getProjectsBySlug)
 
-  return <DetailPage {...content} />
+  return <DetailPage {...content} path='/projects' />
 }

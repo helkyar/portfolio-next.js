@@ -16,7 +16,7 @@ export default function SearchBar({ onChange, query, reset }: Props) {
       <Input
         type='text'
         placeholder='react, next, ...'
-        className='h-9 w-full sm:w-1/2'
+        className='h-9 w-full'
         value={query}
         onChange={onChange}
       />

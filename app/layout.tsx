@@ -9,17 +9,6 @@ import Providers from '@/components/providers'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 
-// const geistSans = localFont({
-//   src: './fonts/GeistVF.woff',
-//   variable: '--font-geist-sans',
-//   weight: '100 900',
-// })
-// const geistMono = localFont({
-//   src: './fonts/GeistMonoVF.woff',
-//   variable: '--font-geist-mono',
-//   weight: '100 900',
-// })
-
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -27,7 +16,7 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: 'Portfolio with next.js and MDX',
+  title: `Javi's Portfolio`,
   description: 'Professional portfolio to showcase projects',
 }
 
@@ -47,7 +36,7 @@ export default function RootLayout({
       >
         <Providers>
           <Header />
-          <main className='grow px-4'>{children}</main>
+          <main className='grow px-4 sm:px-12'>{children}</main>
           <Footer />
         </Providers>
       </body>

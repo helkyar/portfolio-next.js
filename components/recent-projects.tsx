@@ -9,7 +9,7 @@ const t = {
 export default async function RecentProjects() {
   const projects = await getProjects(4)
   return (
-    <section className='pb-24'>
+    <section>
       <h2 className='title mb-4'>{t.title}</h2>
       <Projects projects={projects} />
       <Link

@@ -5,23 +5,32 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { formatDate } from '@/lib/utils'
 import { FileContent } from '@/data/file-constants'
+import { usePathname } from 'next/navigation'
 
 const t = {
-  back: 'Back to all posts',
+  back: 'Go back',
 }
 
-export default async function DetailPage({
+interface PageContent extends FileContent {
+  path?: string
+}
+
+export default function DetailPage({
   author,
   content,
   image,
   publishedAt,
   title,
-}: FileContent) {
+  path = '/',
+}: PageContent) {
+  console.log('🚀 ~ content:', content)
+  // const path = usePathname()
+
   return (
-    <section className='pb-24 pt-32'>
+    <section className='pb-20 pt-20'>
       <div className='container max-w-3xl'>
         <Link
-          href='/posts'
+          href={path}
           className='mb-8 inline-flex items-center gap-2 text-sm font-light text-muted-foreground transition-colors hover:text-foreground'
         >
           <ArrowLeftIcon className='h-5 w-5' />
@@ -34,21 +43,27 @@ export default async function DetailPage({
               alt={title || ''}
               className='object-cover'
               fill
+              sizes='(min-width: 640px) 640px, 100vw'
+              priority
             />
           </div>
         )}
         <header>
           <h1 className='title'>{title}</h1>
-          <p className='mt-3 text-xs text-muted-foreground'>
-            {author} - {formatDate(publishedAt ?? '')}
-          </p>
+          {publishedAt && (
+            <p className='mt-3 text-xs text-muted-foreground'>
+              {author} - {formatDate(publishedAt ?? '')}
+            </p>
+          )}
         </header>
         <main className='prose dark:prose-invert mt-16'>
           <MDXContent source={content} />
         </main>
-        <footer className='mt-16'>
+        {/* {path === '/policy' && ( */}
+        <footer className='mt-10'>
           <NewsletterForm />
         </footer>
+        {/* )} */}
       </div>
     </section>
   )

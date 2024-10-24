@@ -11,6 +11,7 @@ import {
   Textarea,
   Input,
 } from '@/components/ui'
+import NewsletterForm from './newsletter-form'
 
 const t = {
   submitting: 'Submitting...',
@@ -50,7 +51,7 @@ export default function ContactForm() {
 
   return (
     <section className='relative isolate'>
-      <BackgroundPatternIcon />
+      {/* <BackgroundPatternIcon /> */}
       <div className='relative'>
         <form
           className='mt-16 lg:flex-auto'
@@ -115,6 +116,9 @@ export default function ContactForm() {
             </Link>
           </p>
         </form>
+      </div>
+      <div className='mt-10'>
+        <NewsletterForm />
       </div>
     </section>
   )

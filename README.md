@@ -51,8 +51,10 @@ for more details.
 
 ## Next Steps
 
-- Tests
+- Fix MDX markdown parser
 - Update projects list with READMEs of github repos
-- Functional contact form with database
 - Apply an appropriate architecture/design pattern to facilitate extensibility
   and readability
+- Tests
+- Functional contact form with database
+- Support for multi-language

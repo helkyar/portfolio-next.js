@@ -15,5 +15,5 @@ export default async function PostDetailPage({
 }) {
   const content = await getFileContent(params, getPostsBySlug)
 
-  return <DetailPage {...content} />
+  return <DetailPage {...content} path={'/posts'} />
 }
