@@ -5,7 +5,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { formatDate } from '@/lib/utils'
 import { FileContent } from '@/data/file-constants'
-import { usePathname } from 'next/navigation'
 
 const t = {
   back: 'Go back',
@@ -23,9 +22,6 @@ export default function DetailPage({
   title,
   path = '/',
 }: PageContent) {
-  console.log('🚀 ~ content:', content)
-  // const path = usePathname()
-
   return (
     <section className='pb-20 pt-20'>
       <div className='container max-w-3xl'>
@@ -59,11 +55,11 @@ export default function DetailPage({
         <main className='prose dark:prose-invert mt-16'>
           <MDXContent source={content} />
         </main>
-        {/* {path === '/policy' && ( */}
-        <footer className='mt-10'>
-          <NewsletterForm />
-        </footer>
-        {/* )} */}
+        {path !== '/contact' && (
+          <footer className='mt-10'>
+            <NewsletterForm />
+          </footer>
+        )}
       </div>
     </section>
   )
