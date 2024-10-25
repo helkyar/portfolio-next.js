@@ -4,6 +4,18 @@ import matter from 'gray-matter'
 import { notFound } from 'next/navigation'
 import { File, FileContent, FileMetadata } from '@/data/file-constants'
 
+
+// const parser = new Parser()
+// const getLatestArticlesFromBlog = () =>
+//   parser.parseURL(`${URL}/index.xml`).then((data) => data.items)
+
+// const articles = await getLatestArticlesFromBlog()
+// const latestArticlesMarkdown = articles
+//     .slice(0, limit)
+//     .map(({ title, link }) => `- [${title}](${link})`)
+//     .join('\n')
+
+
 const encoding = 'utf8'
 export async function getFilesBySlug(
   slug: string,
