@@ -1,5 +1,6 @@
-import ComponentWithSearch from '@/components/component-with-search'
-import Posts from '@/components/posts'
+// import ComponentWithSearch from '@/components/component-with-search'
+// import SearchResult from '@/components/search-result'
+// import Posts from '@/components/posts'
 import PostsWithSearch from '@/components/posts-with-search'
 import { getPosts } from '@/lib/posts'
 
@@ -14,7 +15,9 @@ export default async function PostsPage() {
       <div className='container max-w-3xl'>
         <h1 className='title mb-12'>{t.title}</h1>
         <PostsWithSearch posts={posts} />
-        {/* <ComponentWithSearch dataArray={posts} Component={Posts} /> */}
+        {/* <ComponentWithSearch dataArray={posts}>
+          <SearchResult component={Posts} />
+        </ComponentWithSearch> */}
       </div>
     </section>
   )

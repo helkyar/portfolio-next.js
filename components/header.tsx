@@ -11,7 +11,7 @@ const contact = 'Contact'
 const Header = () => {
   return (
     <header className='fixed inset-x-0 top-0 z-50 bg-background/75 py-6 backdrop-blur-sm'>
-      <nav className='max-w-3x1 container flex w-full items-center justify-around'>
+      <nav className='max-w-3x1 container mx-auto flex w-full items-center justify-around'>
         <div>
           <Link href='/' className='font-seriz text-2x1 font-bold'>
             JP
