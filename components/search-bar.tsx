@@ -3,13 +3,13 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 
 const t = { reset: 'Reset' }
-type Props = {
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
-  query: string
-  reset: () => void
+type PropTypes = {
+  readonly onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+  readonly query: string
+  readonly reset: () => void
 }
 
-export default function SearchBar({ onChange, query, reset }: Props) {
+export default function SearchBar({ onChange, query, reset }: PropTypes) {
   const isQueryFiltered = query.length > 0
   return (
     <div className='mb-12 flex items-center gap-3'>

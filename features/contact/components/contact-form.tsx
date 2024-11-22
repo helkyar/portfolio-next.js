@@ -1,11 +1,11 @@
 'use client'
 import { resolver, schema } from '@/lib/schema-validation'
-import { ContactFormSchema } from '@/lib/schemas'
+import { ContactFormSchema } from '@/features/contact/lib/schemas'
 import { SubmitHandler, useForm } from '@/lib/form-hooks'
-import { sendEmail } from '@/lib/actions'
-import Link from 'next/link'
+import { sendEmail } from '@/features/contact/lib/actions'
 import { toast, Button, Textarea, Input } from '@/components/ui'
-import NewsletterForm from '@/components/newsletter-form'
+import NewsletterForm from '@/features/contact/components/newsletter-form'
+import { Link } from '@/i18n/routing'
 
 const t = {
   submitting: 'Submitting...',

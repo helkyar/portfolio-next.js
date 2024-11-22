@@ -1,5 +1,5 @@
-import ProjectsWithSearch from '@/components/projects-with-search'
-import { getProjects } from '@/lib/projects'
+import ProjectsWithSearch from '@/features/projects/components/projects-with-search'
+import { getProjects } from '@/features/projects/lib/get-projects'
 
 const t = {
   title: 'Projects',

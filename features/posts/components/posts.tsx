@@ -1,9 +1,11 @@
-import Link from 'next/link'
 import { formatDate } from '@/lib/utils'
 import { FileMetadata } from '@/data/file-constants'
 import { Card } from '@/components/ui/card'
+import { Link } from '@/i18n/routing'
 
-export default function Posts({ posts }: { posts: FileMetadata[] }) {
+type PropTypes = { readonly posts: FileMetadata[] }
+
+export default function Posts({ posts }: PropTypes) {
   return (
     <ul className='flex flex-col gap-4'>
       {posts.map((post: FileMetadata) => (
@@ -11,7 +13,7 @@ export default function Posts({ posts }: { posts: FileMetadata[] }) {
           <li>
             <Link
               href={`/posts/${post.slug}`}
-              className='flex flex-col justify-between gap-x-4 gap-y-1 p-4 hover:bg-black hover:bg-opacity-5 sm:flex-row'
+              className='flex flex-col justify-between gap-x-4 gap-y-1 p-4 hover:bg-black hover:bg-opacity-5 dark:hover:bg-slate-800 sm:flex-row'
             >
               <div className='max-w-lg'>
                 <p className='text-lg font-semibold'>{post.title}</p>

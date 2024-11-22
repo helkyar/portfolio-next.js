@@ -1,8 +1,11 @@
 'use server'
 import { Resend } from 'resend'
-import { ContactFormSchema, NewsletterFormSchema } from '@/lib/schemas'
+import {
+  ContactFormSchema,
+  NewsletterFormSchema,
+} from '@/features/contact/lib/schemas'
 import { schema } from '@/lib/schema-validation'
-import ContactFormEmail from '@/email-template/contact-form-email'
+import ContactFormEmail from '@/features/contact/templates/contact-form-email'
 
 type ContactFormInputs = schema.infer<typeof ContactFormSchema>
 type NewsletterFormInputs = schema.infer<typeof NewsletterFormSchema>
@@ -54,7 +57,7 @@ export async function subscribe(data: NewsletterFormInputs) {
 
     if (!data || error) throw new Error('Failed to subscribe')
 
-    // TODO: Send a welcome email
+    // TO_DO: Send a welcome email
 
     return { success: true }
   } catch (error) {

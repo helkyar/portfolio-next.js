@@ -1,7 +1,7 @@
-import { getProjects } from '@/lib/projects'
-import Projects from '@/components/projects'
-import Link from 'next/link'
+import { getProjects } from '@/features/projects/lib/get-projects'
+import Projects from '@/features/projects/components/projects'
 import { DEFAULT_PROJECTS_PREVIEW } from '@/data/file-constants'
+import { Link } from '@/i18n/routing'
 
 const t = {
   title: 'Recent Projects',

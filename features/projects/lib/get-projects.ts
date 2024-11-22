@@ -6,7 +6,7 @@ import {
 } from '@/data/file-constants'
 import { getFiles, getFilesBySlug } from '@/lib/file-parser'
 
-const rootDirectory = path.join(process.cwd(), 'content', 'projects')
+const rootDirectory = path.join(process.cwd(), 'features/projects', 'content')
 
 export async function getProjectsBySlug(slug: string): Promise<Project | null> {
   return getFilesBySlug(slug, rootDirectory)

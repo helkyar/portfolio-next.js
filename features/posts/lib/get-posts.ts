@@ -6,7 +6,7 @@ import {
 } from '@/data/file-constants'
 import { getFiles, getFilesBySlug } from '@/lib/file-parser'
 
-const rootDirectory = path.join(process.cwd(), 'content', 'posts')
+const rootDirectory = path.join(process.cwd(), 'features/posts', 'content')
 
 export async function getPostsBySlug(slug: string): Promise<Post | null> {
   return getFilesBySlug(slug, rootDirectory)

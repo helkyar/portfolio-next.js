@@ -1,5 +1,5 @@
+import { Link } from '@/i18n/routing'
 import { ArrowLeftIcon } from '@radix-ui/react-icons'
-import Link from 'next/link'
 
 const t = {
   title: 'Page not found',
@@ -19,8 +19,12 @@ export default function NotFound() {
             </p>
             <div className='sm:ml-6'>
               <div className='sm:border-l sm:border-gray-200 sm:pl-6'>
-                <h1 className='sm:text- text-3xl font-bold tracking-tight sm:text-5xl'></h1>
-                <p className='mt-1 text-base text-muted-foreground'></p>
+                <h1 className='sm:text- text-3xl font-bold tracking-tight sm:text-5xl'>
+                  {t.title}
+                </h1>
+                <p className='mt-1 text-base text-muted-foreground'>
+                  {t.description}
+                </p>
               </div>
               <div className='mt-10 text-base text-muted-foreground'>
                 <Link
