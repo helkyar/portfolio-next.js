@@ -1,15 +1,15 @@
 import type { Metadata } from 'next'
-// import localFont from 'next/font/local'
 import { Inter, Playfair_Display } from 'next/font/google'
 import { cn } from '@/lib/utils'
 import './globals.css'
 import Providers from '@/components/providers'
-import Header from '@/components/header'
-import Footer from '@/components/footer'
+import Header from '@/features/layout/header'
+import Footer from '@/features/layout/footer'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import { routing } from '@/i18n/routing'
 import { notFound } from 'next/navigation'
+import { Locale } from '@/data/constants'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
 const playfair = Playfair_Display({
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 
 type PropTypes = {
   readonly children: React.ReactNode
-  readonly params: { locale: 'en' | 'es' }
+  readonly params: { locale: Locale }
 }
 
 export default async function RootLayout({
@@ -49,8 +49,8 @@ export default async function RootLayout({
       >
         <Providers>
           <NextIntlClientProvider messages={messages}>
-            <Header />
-            <main className='grow px-4 sm:px-12'>{children}</main>
+            <Header locale={locale} />
+            <main className='w-full grow px-4 sm:px-12'>{children}</main>
             <Footer />
           </NextIntlClientProvider>
         </Providers>

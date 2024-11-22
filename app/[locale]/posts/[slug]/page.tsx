@@ -1,6 +1,7 @@
 import DetailPage from '@/components/detail-page'
 import { getFileContent } from '@/lib/file-parser'
 import { getPosts, getPostsBySlug } from '@/features/posts/lib/get-posts'
+import { getLocale } from 'next-intl/server'
 
 export async function generateStaticParams() {
   const posts = await getPosts()
@@ -13,7 +14,8 @@ type PropTypes = {
 }
 
 export default async function PostDetailPage({ params }: PropTypes) {
-  const content = await getFileContent(params, getPostsBySlug)
+  const locale = await getLocale()
+  const content = await getFileContent(params, getPostsBySlug(locale))
 
   return <DetailPage {...content} path={'/posts'} />
 }

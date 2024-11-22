@@ -6,19 +6,12 @@ import { sendEmail } from '@/features/contact/lib/actions'
 import { toast, Button, Textarea, Input } from '@/components/ui'
 import NewsletterForm from '@/features/contact/components/newsletter-form'
 import { Link } from '@/i18n/routing'
-
-const t = {
-  submitting: 'Submitting...',
-  submit: 'Submit',
-  privacy_text: 'By submitting this form, you agree to our ',
-  privacy_link: 'privacy policy',
-  email_placeholder: 'Email',
-  message_placeholder: 'Message',
-  name_placeholder: 'Name',
-}
+import { useTranslation } from '@/lib/translations'
 
 type Inputs = schema.infer<typeof ContactFormSchema>
 export default function ContactForm() {
+  const { t } = useTranslation('ContactPage')
+
   const {
     reset,
     register,
@@ -36,10 +29,10 @@ export default function ContactForm() {
   const processForm: SubmitHandler<Inputs> = async (data) => {
     const result = await sendEmail(data)
     if (result.error) {
-      toast.error('An error occurred! Please try again.')
+      toast.error(t('error'))
       return
     }
-    toast.success('Message sent successfully!')
+    toast.success(t('success'))
     reset()
   }
 
@@ -57,7 +50,7 @@ export default function ContactForm() {
               <Input
                 id='name'
                 type='text'
-                placeholder={t.name_placeholder}
+                placeholder={t('name_placeholder')}
                 autoComplete='given-name'
                 {...register('name')}
               />
@@ -71,7 +64,7 @@ export default function ContactForm() {
               <Input
                 id='email'
                 type='email'
-                placeholder={t.email_placeholder}
+                placeholder={t('email_placeholder')}
                 autoComplete='email'
                 {...register('email')}
               />
@@ -84,7 +77,7 @@ export default function ContactForm() {
             <div className='sm:col-span-2'>
               <Textarea
                 rows={4}
-                placeholder={t.message_placeholder}
+                placeholder={t('message_placeholder')}
                 {...register('message')}
               />
               {errors.message?.message && (
@@ -100,13 +93,13 @@ export default function ContactForm() {
               disabled={isSubmitting}
               className='w-full disabled:opacity-50'
             >
-              {isSubmitting ? t.submitting : t.submit}
+              {isSubmitting ? t('submitting') : t('submit')}
             </Button>
           </div>
           <p className='mt-4 text-xs text-muted-foreground'>
-            {t.privacy_text}
+            {t('privacy_text')}
             <Link href='/privacy' className='font-bold'>
-              {t.privacy_link}
+              {t('privacy_link')}
             </Link>
           </p>
         </form>

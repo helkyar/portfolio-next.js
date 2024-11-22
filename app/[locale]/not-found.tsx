@@ -1,38 +1,33 @@
 import { Link } from '@/i18n/routing'
+import { useTranslation } from '@/lib/translations'
 import { ArrowLeftIcon } from '@radix-ui/react-icons'
 
-const t = {
-  title: 'Page not found',
-  description: "Sorry, we couldn't find the page you're looking for.",
-  subtitle: '404',
-  link: 'Go back home',
-}
-
 export default function NotFound() {
+  const { t } = useTranslation('NotFound')
   return (
     <section className='pb-24 pt-40'>
       <div className='sm:py-s4 min-h-full px-4 sm:px-6 md:grid md:place-items-center lg:px-8'>
         <div className='mx-auto max-w-max'>
           <main className='sm:flex'>
             <p className='text-4x1 font-bold tracking-tight text-muted-foreground sm:text-5xl'>
-              {t.subtitle}
+              {t('subtitle')}
             </p>
             <div className='sm:ml-6'>
               <div className='sm:border-l sm:border-gray-200 sm:pl-6'>
                 <h1 className='sm:text- text-3xl font-bold tracking-tight sm:text-5xl'>
-                  {t.title}
+                  {t('title')}
                 </h1>
                 <p className='mt-1 text-base text-muted-foreground'>
-                  {t.description}
+                  {t('description')}
                 </p>
               </div>
               <div className='mt-10 text-base text-muted-foreground'>
                 <Link
                   href='/'
-                  className='inline-flex items-center gap-3 text-muted-foreground transition-colors hover:text-foreground'
+                  className='inline-flex items-center gap-3 text-muted-foreground hover:text-foreground'
                 >
                   <ArrowLeftIcon className='h-5 w-5' />
-                  <span>{t.link}</span>
+                  <span>{t('link')}</span>
                 </Link>
               </div>
             </div>

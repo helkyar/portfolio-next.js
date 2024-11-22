@@ -3,11 +3,11 @@ import React, { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
 import { Button } from '@/components/ui/button'
 import { MoonIcon, SunIcon } from '@radix-ui/react-icons'
-import { Theme } from '@/data/theme-constants'
-
-const t = { tooltip: 'Toggle theme' }
+import { Theme } from '@/data/constants'
+import { useTranslation } from '@/lib/translations'
 
 const ThemeToggle = () => {
+  const { t } = useTranslation('Components.ThemeToggle')
   const { setTheme, resolvedTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
@@ -30,7 +30,7 @@ const ThemeToggle = () => {
       ) : (
         <MoonIcon className='size-4 text-sky-950' />
       )}
-      <span className='sr-only'>{t.tooltip}</span>
+      <span className='sr-only'>{t('tooltip')}</span>
     </Button>
   )
 }

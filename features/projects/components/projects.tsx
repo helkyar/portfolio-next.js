@@ -1,4 +1,4 @@
-import { FileMetadata } from '@/data/file-constants'
+import { FileMetadata } from '@/data/types'
 import { Link } from '@/i18n/routing'
 import { formatDate } from '@/lib/utils'
 import Image from 'next/image'

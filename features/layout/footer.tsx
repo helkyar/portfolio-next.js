@@ -1,3 +1,4 @@
+import { useTranslation } from '@/lib/translations'
 import { JSX, SVGProps } from 'react'
 
 const navigation = [
@@ -28,10 +29,8 @@ const navigation = [
   },
 ]
 
-const t = {
-  rights: '\u00A9 Use as you please',
-}
-const Footer = () => {
+export default function Footer() {
+  const { t } = useTranslation('LayoutPage.Footer')
   return (
     <footer className='py-8'>
       <div className='max-w-3x1 container'>
@@ -51,12 +50,10 @@ const Footer = () => {
         </div>
         <div className='mt-4'>
           <p className='text-center text-xs leading-5 text-muted-foreground'>
-            {t.rights}
+            {t('rights')}
           </p>
         </div>
       </div>
     </footer>
   )
 }
-
-export default Footer

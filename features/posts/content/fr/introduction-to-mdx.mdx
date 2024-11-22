@@ -1,0 +1,51 @@
+---
+  title: Introduction à MDX
+  summary: MDX est un outil puissant qui vous permet d'écrire du JSX dans vos fichiers Markdown. Cet article vous présentera les bases de MDX.
+  image: /images/posts/introduction-to-mdx.webp
+  author: 'Hamed Bahram'
+  publishedAt: '2024-08-08'
+---
+
+MDX est un outil puissant qui vous permet d'écrire du JSX dans vos fichiers
+Markdown. Cet article vous présentera les bases de MDX.
+
+## Qu'est-ce que MDX ?
+
+MDX est un format de fichier qui vous permet d'écrire du JSX dans vos fichiers
+Markdown. Cela signifie que vous pouvez utiliser des composants React, importer
+d'autres composants, et même écrire du JSX en ligne dans vos fichiers Markdown.
+
+```
+export async function getSource() {
+  const response = await fetch('https://api.example.com/data');
+  const data = await response.json();
+  return data;
+}
+```
+
+## Pourquoi utiliser MDX ?
+
+MDX est un excellent moyen d'écrire de la documentation interactive, des
+articles de blog, et d'autres contenus qui nécessitent plus que du simple texte.
+En utilisant MDX, vous pouvez facilement intégrer des composants interactifs,
+des extraits de code, et d'autres contenus dynamiques dans vos fichiers
+Markdown.
+
+<Counter />
+
+## Comment utiliser MDX
+
+Pour utiliser MDX, vous devez installer un plugin pour votre générateur de site
+statique ou votre outil de construction. Par exemple, si vous utilisez Gatsby,
+vous pouvez utiliser le plugin `gatsby-plugin-mdx` pour activer la prise en
+charge de MDX dans votre projet.
+
+Une fois que vous avez installé le plugin, vous pouvez commencer à écrire des
+fichiers MDX en créant des fichiers avec l'extension `.mdx` et en écrivant du
+JSX à l'intérieur.
+
+## Conclusion
+
+MDX est un outil puissant qui vous permet d'écrire du JSX dans vos fichiers
+Markdown. Cet article vous a présenté les bases de MDX et expliqué pourquoi vous
+pourriez vouloir l'utiliser dans vos projets.
