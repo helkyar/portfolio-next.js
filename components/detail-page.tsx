@@ -1,17 +1,17 @@
 import { ArrowLeftIcon } from '@radix-ui/react-icons'
 import MDXContent from '@/components/mdx-content'
-import NewsletterForm from '@/components/newsletter-form'
-import Link from 'next/link'
+import NewsletterForm from '@/features/contact/components/newsletter-form'
 import Image from 'next/image'
 import { formatDate } from '@/lib/utils'
 import { FileContent } from '@/data/file-constants'
+import { Link } from '@/i18n/routing'
 
 const t = {
   back: 'Go back',
 }
 
 interface PageContent extends FileContent {
-  path?: string
+  readonly path?: string
 }
 
 export default function DetailPage({
@@ -36,7 +36,7 @@ export default function DetailPage({
           <div className='relative mb-6 h-96 w-full overflow-hidden rounded-lg'>
             <Image
               src={image}
-              alt={title || ''}
+              alt={title ?? ''}
               className='object-cover'
               fill
               sizes='(min-width: 640px) 640px, 100vw'

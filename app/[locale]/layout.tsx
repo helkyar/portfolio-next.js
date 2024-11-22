@@ -9,6 +9,7 @@ import Footer from '@/components/footer'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import { routing } from '@/i18n/routing'
+import { notFound } from 'next/navigation'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
 const playfair = Playfair_Display({
@@ -21,23 +22,24 @@ export const metadata: Metadata = {
   description: 'Professional portfolio to showcase projects',
 }
 
+type PropTypes = {
+  readonly children: React.ReactNode
+  readonly params: { locale: 'en' | 'es' }
+}
+
 export default async function RootLayout({
   children,
   params: { locale },
-}: Readonly<{
-  children: React.ReactNode
-  params: { locale: 'en' | 'es' }
-}>) {
-  // Ensure that the incoming `locale` is valid
+}: PropTypes) {
   if (!routing.locales.includes(locale)) {
-    // notFound()
+    notFound()
   }
 
-  // Providing all messages to the client
-  // side is the easiest way to get started
+  // Providing all messages to the client side
   const messages = await getMessages()
+
   return (
-    <html lang='en' suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <body
         className={cn(
           'flex min-h-screen flex-col items-center font-sans antialiased',

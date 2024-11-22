@@ -5,8 +5,9 @@ import { Toaster } from '@/components/ui/toast'
 import { Theme } from '@/data/theme-constants'
 // component
 const propTypes = { children: PropTypes.node }
+type PropTypes = { readonly children: React.ReactNode }
 
-const Providers = ({ children }: { children: React.ReactNode }) => {
+const Providers = ({ children }: PropTypes) => {
   return (
     <ThemeProvider
       enableSystem

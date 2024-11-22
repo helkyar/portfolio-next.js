@@ -2,15 +2,17 @@
 
 import { FileMetadata } from '@/data/file-constants'
 import { useState } from 'react'
-import Posts from '@/components/posts'
+import Projects from '@/features/projects/components/projects'
 import SearchBar from '@/components/search-bar'
 
-export default function PostsWithSearch({ posts }: { posts: FileMetadata[] }) {
+type PropTypes = { readonly projects: FileMetadata[] }
+
+export default function ProjectsWithSearch({ projects }: PropTypes) {
   const [query, setQuery] = useState('')
-  const filteredPosts = posts.filter(
-    (post) =>
-      post.title?.toLowerCase().includes(query.toLowerCase()) ||
-      post.summary?.toLowerCase().includes(query.toLowerCase()),
+  const filteredProjects = projects.filter(
+    (project) =>
+      project.title?.toLowerCase().includes(query.toLowerCase()) ||
+      project.summary?.toLowerCase().includes(query.toLowerCase()),
   )
   function resetFilter() {
     setQuery('')
@@ -21,7 +23,7 @@ export default function PostsWithSearch({ posts }: { posts: FileMetadata[] }) {
   return (
     <div>
       <SearchBar onChange={changeFilter} query={query} reset={resetFilter} />
-      <Posts posts={filteredPosts} />
+      <Projects projects={filteredProjects} />
     </div>
   )
 }
