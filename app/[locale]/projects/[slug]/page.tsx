@@ -4,6 +4,7 @@ import {
   getProjects,
   getProjectsBySlug,
 } from '@/features/projects/lib/get-projects'
+import { getLocale } from 'next-intl/server'
 
 export async function generateStaticParams() {
   const posts = await getProjects()
@@ -14,7 +15,8 @@ export async function generateStaticParams() {
 type PropTypes = { readonly params: { slug: string } }
 
 export default async function ProjectDetailPage({ params }: PropTypes) {
-  const content = await getFileContent(params, getProjectsBySlug)
+  const locale = await getLocale()
+  const content = await getFileContent(params, getProjectsBySlug(locale))
 
   return <DetailPage {...content} path='/projects' />
 }

@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import authorImage from '@/public/images/authors/javi.jpeg'
-import { useTranslations } from 'next-intl'
+import { useTranslation } from '@/lib/translations'
 
 export default function Intro() {
-  const t = useTranslations('HomePage')
+  const { t } = useTranslation('HomePage.Intro')
   return (
     <section className='flex flex-col-reverse items-center gap-x-10 gap-y-4 md:flex-row md:items-center'>
       <div className='mt-2 flex-1 md:mt-0'>

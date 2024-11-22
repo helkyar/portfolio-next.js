@@ -1,19 +1,18 @@
+import { MainContainer } from '@/components/main-container'
 import ProjectsWithSearch from '@/features/projects/components/projects-with-search'
 import { getProjects } from '@/features/projects/lib/get-projects'
-
-const t = {
-  title: 'Projects',
-}
+import { getTranslation } from '@/lib/translations'
+import { getLocale } from 'next-intl/server'
 
 export default async function ProjectsPage() {
-  const projects = await getProjects()
+  const { t } = await getTranslation('ProjectsPage')
+  const locale = await getLocale()
+  const projects = await getProjects({ locale })
 
   return (
-    <section className='pb-24 pt-40'>
-      <div className='container max-w-3xl'>
-        <h1 className='title mb-12'>{t.title}</h1>
-        <ProjectsWithSearch projects={projects} />
-      </div>
-    </section>
+    <MainContainer>
+      <h1 className='title mb-12'>{t('title')}</h1>
+      <ProjectsWithSearch projects={projects} />
+    </MainContainer>
   )
 }

@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import { notFound } from 'next/navigation'
-import { File, FileContent, FileMetadata } from '@/data/file-constants'
+import { File, FileContent, FileMetadata } from '@/data/types'
 
 const encoding = 'utf8'
 export async function getFilesBySlug(

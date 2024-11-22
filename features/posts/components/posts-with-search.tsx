@@ -1,6 +1,6 @@
 'use client'
 
-import { FileMetadata } from '@/data/file-constants'
+import { FileMetadata } from '@/data/types'
 import { useState } from 'react'
 import Posts from '@/features/posts/components/posts'
 import SearchBar from '@/components/search-bar'

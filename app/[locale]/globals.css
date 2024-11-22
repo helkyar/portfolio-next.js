@@ -79,8 +79,7 @@
     @apply border-border;
   }
   body {
-    @apply transition-colors;
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground transition-colors;
   }
 
   header {
@@ -106,5 +105,8 @@
 
   .prose code span {
     @apply font-medium;
+  }
+  .shadow-box {
+    @apply shadow-md shadow-zinc-900;
   }
 }

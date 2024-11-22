@@ -1,15 +1,13 @@
+import { MainContainer } from '@/components/main-container'
 import ContactForm from '@/features/contact/components/contact-form'
+import { getTranslation } from '@/lib/translations'
 
-const t = {
-  title: `Let's talk about your project`,
-}
 export default async function Contact() {
+  const { t } = await getTranslation('ContactPage')
   return (
-    <section className='pb-24 pt-40'>
-      <div className='container max-w-3xl'>
-        <h2 className='title'>{t.title}</h2>
-        <ContactForm />
-      </div>
-    </section>
+    <MainContainer>
+      <h2 className='title'>{t('title')}</h2>
+      <ContactForm />
+    </MainContainer>
   )
 }

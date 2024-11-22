@@ -1,0 +1,70 @@
+{
+  "HomePage": {
+    "Intro": {
+      "title": "Hola, soy Javi",
+      "text": "Me he dedicado a la programación web durante varios años, la mayor parte del tiempo de forma remota. Mi carrera está enfocada en el frontend, especialmente en el desarrollo con componentes. Trabajo con buenas prácticas y soy competente con los frameworks y soluciones más comunes en la industria. He trabajado en varios proyectos, desde formularios básicos hasta sistemas de gestión con múltiples pestañas y ventanas emergentes. Incluyendo el desarrollo desde cero y la migración de sistemas heredados."
+    },
+    "Posts": {
+      "title": "Publicaciones Recientes",
+      "link": "Ver todas las publicaciones"
+    },
+    "Projects": {
+      "title": "Proyectos Recientes",
+      "link": "Ver todos los proyectos"
+    },
+    "Newsletter": {
+      "error": "Algo salió mal. Por favor, inténtalo de nuevo.",
+      "success": "¡Gracias por suscribirte!",
+      "privacy_link": "política de privacidad",
+      "privacy_text": "Nos preocupamos por tus datos. Lee nuestra ",
+      "is_submitting": "Enviando...",
+      "submit": "Suscribirse",
+      "title": "Suscríbete al boletín",
+      "description": "Recibe las últimas actualizaciones sobre mi trabajo y proyectos",
+      "email_placeholder": "ejemplo@email.com"
+    }
+  },
+  "NotFound": {
+    "title": "Página no encontrada",
+    "description": "Lo siento, no pudimos encontrar la página que estás buscando.",
+    "subtitle": "404",
+    "link": "Volver a inicio"
+  },
+  "PostsPage": {
+    "title": "Publicaciones"
+  },
+  "ProjectsPage": {
+    "title": "Proyectos"
+  },
+  "DetailPage": {
+    "back": "Volver"
+  },
+  "LayoutPage": {
+    "Header": {
+      "posts": "Publicaciones",
+      "projects": "Proyectos",
+      "contact": "Contacto"
+    },
+    "Footer": {
+      "rights": "\u00A9 Derechos reservados"
+    }
+  },
+  "ContactPage": {
+    "title": "Hablemos sobre tu proyecto",
+    "submitting": "Enviando...",
+    "submit": "Enviar",
+    "privacy_text": "Al enviar este formulario, aceptas nuestra ",
+    "privacy_link": "política de privacidad",
+    "email_placeholder": "Correo electrónico",
+    "message_placeholder": "Mensaje",
+    "name_placeholder": "Nombre"
+  },
+  "Components": {
+    "SearchBar": {
+      "reset": "Restablecer"
+    },
+    "ThemeToggle": {
+      "toggle": "cambiar tema"
+    }
+  }
+}

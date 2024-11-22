@@ -1,0 +1,72 @@
+{
+  "HomePage": {
+    "Intro": {
+      "title": "Hallo, ich bin Javi",
+      "text": "Ich habe mehrere Jahre im Bereich Webprogrammierung gearbeitet, die meiste Zeit davon remote. Meine Karriere ist auf das Frontend fokussiert, insbesondere auf die Entwicklung mit Komponenten. Ich arbeite mit Best Practices und bin kompetent mit den gängigsten Frameworks und Lösungen in der Branche. Ich habe an verschiedenen Projekten gearbeitet, von einfachen Formularen bis hin zu Verwaltungssystemen mit mehreren Tabs und Pop-up-Fenstern. Dazu gehört die Entwicklung von Grund auf sowie die Migration von Altsystemen."
+    },
+    "Posts": {
+      "title": "Neueste Beiträge",
+      "link": "Alle Beiträge anzeigen"
+    },
+    "Projects": {
+      "title": "Neueste Projekte",
+      "link": "Alle Projekte anzeigen"
+    },
+    "Newsletter": {
+      "error": "Etwas ist schief gelaufen. Bitte versuche es erneut.",
+      "success": "Danke für deine Anmeldung!",
+      "privacy_link": "Datenschutzrichtlinie",
+      "privacy_text": "Wir kümmern uns um deine Daten. Lies unsere ",
+      "is_submitting": "Senden...",
+      "submit": "Abonnieren",
+      "title": "Abonniere den Newsletter",
+      "description": "Erhalte die neuesten Updates zu meiner Arbeit und meinen Projekten",
+      "email_placeholder": "beispiel@email.com"
+    }
+  },
+  "NotFound": {
+    "title": "Seite nicht gefunden",
+    "description": "Entschuldigung, wir konnten die gesuchte Seite nicht finden.",
+    "subtitle": "404",
+    "link": "Zurück zur Startseite"
+  },
+  "PostsPage": {
+    "title": "Beiträge"
+  },
+  "ProjectsPage": {
+    "title": "Projekte"
+  },
+  "DetailPage": {
+    "back": "Zurück"
+  },
+  "LayoutPage": {
+    "Header": {
+      "posts": "Beiträge",
+      "projects": "Projekte",
+      "contact": "Kontakt"
+    },
+    "Footer": {
+      "rights": "\u00A9 Alle Rechte vorbehalten"
+    }
+  },
+  "ContactPage": {
+    "title": "Lass uns über dein Projekt sprechen",
+    "submitting": "Senden...",
+    "submit": "Senden",
+    "privacy_text": "Durch das Absenden dieses Formulars akzeptierst du unsere ",
+    "privacy_link": "Datenschutzrichtlinie",
+    "email_placeholder": "E-Mail",
+    "message_placeholder": "Nachricht",
+    "name_placeholder": "Name",
+    "error": "Etwas ist schief gelaufen. Bitte versuche es erneut.",
+    "success": "Danke, dass du mich kontaktiert hast!"
+  },
+  "Components": {
+    "SearchBar": {
+      "reset": "Zurücksetzen"
+    },
+    "ThemeToggle": {
+      "toggle": "Thema wechseln"
+    }
+  }
+}

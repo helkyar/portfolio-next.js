@@ -1,9 +1,9 @@
 import path from 'path'
 
 import {
-  FileMetadata as PrivacyPlicyMetadata,
+  FileMetadata as PrivacyPolicyMetadata,
   File as PrivacyPolicy,
-} from '@/data/file-constants'
+} from '@/data/types'
 import { getFiles, getFilesBySlug } from '@/lib/file-parser'
 
 const rootDirectory = path.join(process.cwd(), 'content', 'privacy')
@@ -16,6 +16,6 @@ export async function getPrivacyBySlug(
 
 export async function getPrivacyPolicy(
   limit?: number,
-): Promise<PrivacyPlicyMetadata[]> {
+): Promise<PrivacyPolicyMetadata[]> {
   return getFiles(rootDirectory, limit)
 }

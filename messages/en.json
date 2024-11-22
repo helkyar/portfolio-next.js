@@ -1,6 +1,72 @@
 {
   "HomePage": {
-    "title": "Hey, I'm Javi",
-    "text": "I have been dedicating myself to web programming for several years, most of the time remotely. My career is focused on frontend, especially development with components. I work with good practices and am proficient with the most common frameworks and solutions in the industry. I have worked on various projects from basic forms to management systems with multiple tabs and pop-ups. Including developing from scratch and migrating legacy."
+    "Intro": {
+      "title": "Hey, I'm Javi",
+      "text": "I have been dedicating myself to web programming for several years, most of the time remotely. My career is focused on frontend, especially development with components. I work with good practices and am proficient with the most common frameworks and solutions in the industry. I have worked on various projects from basic forms to management systems with multiple tabs and pop-ups. Including developing from scratch and migrating legacy."
+    },
+    "Posts": {
+      "title": "Recent Posts",
+      "link": "View all posts"
+    },
+    "Projects": {
+      "title": "Recent Projects",
+      "link": "View all projects"
+    },
+    "Newsletter": {
+      "error": "Something went wrong. Please try again.",
+      "success": "Thanks for subscribing!",
+      "privacy_link": "privacy policy",
+      "privacy_text": "We care about your data. Read our ",
+      "is_submitting": "Submitting...",
+      "submit": "Subscribe",
+      "title": "Subscribe to the newsletter",
+      "description": "Get the latest updates on my work and projects",
+      "email_placeholder": "example@email.com"
+    }
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "description": "Sorry, we couldn't find the page you're looking for.",
+    "subtitle": "404",
+    "link": "Go back home"
+  },
+  "PostsPage": {
+    "title": "Posts"
+  },
+  "ProjectsPage": {
+    "title": "Projects"
+  },
+  "DetailPage": {
+    "back": "Go back"
+  },
+  "LayoutPage": {
+    "Header": {
+      "posts": "Posts",
+      "projects": "Projects",
+      "contact": "Contact"
+    },
+    "Footer": {
+      "rights": "\u00A9 Rights granted"
+    }
+  },
+  "ContactPage": {
+    "title": "Let's talk about your project",
+    "submitting": "Submitting...",
+    "submit": "Submit",
+    "privacy_text": "By submitting this form, you agree to our ",
+    "privacy_link": "privacy policy",
+    "email_placeholder": "Email",
+    "message_placeholder": "Message",
+    "name_placeholder": "Name",
+    "error": "Something went wrong. Please try again.",
+    "success": "Thanks for contacting me!"
+  },
+  "Components": {
+    "SearchBar": {
+      "reset": "Reset"
+    },
+    "ThemeToggle": {
+      "toggle": "toggle theme"
+    }
   }
 }

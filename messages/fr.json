@@ -1,0 +1,72 @@
+{
+  "HomePage": {
+    "Intro": {
+      "title": "Bonjour, je suis Javi",
+      "text": "Je me suis consacré à la programmation web pendant plusieurs années, principalement à distance. Ma carrière est axée sur le frontend, en particulier sur le développement avec des composants. Je travaille avec de bonnes pratiques et je suis compétent avec les frameworks et solutions les plus courants de l'industrie. J'ai travaillé sur plusieurs projets, des formulaires de base aux systèmes de gestion avec plusieurs onglets et fenêtres contextuelles. Y compris le développement à partir de zéro et la migration de systèmes hérités."
+    },
+    "Posts": {
+      "title": "Articles Récents",
+      "link": "Voir tous les articles"
+    },
+    "Projects": {
+      "title": "Projets Récents",
+      "link": "Voir tous les projets"
+    },
+    "Newsletter": {
+      "error": "Quelque chose s'est mal passé. Veuillez réessayer.",
+      "success": "Merci pour votre abonnement !",
+      "privacy_link": "politique de confidentialité",
+      "privacy_text": "Nous nous soucions de vos données. Lisez notre ",
+      "is_submitting": "Envoi en cours...",
+      "submit": "S'abonner",
+      "title": "Abonnez-vous à la newsletter",
+      "description": "Recevez les dernières mises à jour sur mon travail et mes projets",
+      "email_placeholder": "exemple@email.com"
+    }
+  },
+  "NotFound": {
+    "title": "Page non trouvée",
+    "description": "Désolé, nous n'avons pas pu trouver la page que vous recherchez.",
+    "subtitle": "404",
+    "link": "Retour à l'accueil"
+  },
+  "PostsPage": {
+    "title": "Articles"
+  },
+  "ProjectsPage": {
+    "title": "Projets"
+  },
+  "DetailPage": {
+    "back": "Retour"
+  },
+  "LayoutPage": {
+    "Header": {
+      "posts": "Articles",
+      "projects": "Projets",
+      "contact": "Contact"
+    },
+    "Footer": {
+      "rights": "\u00A9 Tous droits réservés"
+    }
+  },
+  "ContactPage": {
+    "title": "Parlons de votre projet",
+    "submitting": "Envoi en cours...",
+    "submit": "Envoyer",
+    "privacy_text": "En soumettant ce formulaire, vous acceptez notre ",
+    "privacy_link": "politique de confidentialité",
+    "email_placeholder": "Adresse e-mail",
+    "message_placeholder": "Message",
+    "name_placeholder": "Nom",
+    "error": "Quelque chose s'est mal passé. Veuillez réessayer.",
+    "success": "Merci de m'avoir contacté!"
+  },
+  "Components": {
+    "SearchBar": {
+      "reset": "Réinitialiser"
+    },
+    "ThemeToggle": {
+      "toggle": "changer de thème"
+    }
+  }
+}

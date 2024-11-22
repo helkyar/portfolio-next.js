@@ -3,12 +3,9 @@ import MDXContent from '@/components/mdx-content'
 import NewsletterForm from '@/features/contact/components/newsletter-form'
 import Image from 'next/image'
 import { formatDate } from '@/lib/utils'
-import { FileContent } from '@/data/file-constants'
 import { Link } from '@/i18n/routing'
-
-const t = {
-  back: 'Go back',
-}
+import { FileContent } from '@/data/types'
+import { useTranslation } from '@/lib/translations'
 
 interface PageContent extends FileContent {
   readonly path?: string
@@ -22,15 +19,16 @@ export default function DetailPage({
   title,
   path = '/',
 }: PageContent) {
+  const { t } = useTranslation('DetailPage')
   return (
     <section className='pb-20 pt-20'>
-      <div className='container max-w-3xl'>
+      <div className='container mx-auto max-w-3xl'>
         <Link
           href={path}
           className='mb-8 inline-flex items-center gap-2 text-sm font-light text-muted-foreground transition-colors hover:text-foreground'
         >
           <ArrowLeftIcon className='h-5 w-5' />
-          <span>{t.back}</span>
+          <span>{t('back')}</span>
         </Link>
         {image && (
           <div className='relative mb-6 h-96 w-full overflow-hidden rounded-lg'>
