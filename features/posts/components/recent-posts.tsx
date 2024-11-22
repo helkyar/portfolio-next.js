@@ -1,7 +1,7 @@
-import Link from 'next/link'
-import Posts from '@/components/posts'
-import { getPosts } from '@/lib/posts'
+import Posts from '@/features/posts/components/posts'
+import { getPosts } from '@/features/posts/lib/get-posts'
 import { DEFAULT_POSTS_PREVIEW } from '@/data/file-constants'
+import { Link } from '@/i18n/routing'
 
 const t = {
   title: 'Recent Posts',

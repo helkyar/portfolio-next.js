@@ -1,7 +1,7 @@
 import Intro from '@/components/intro'
-import NewsletterForm from '@/components/newsletter-form'
-import RecentPosts from '@/components/recent-posts'
-import RecentProjects from '@/components/recent-projects'
+import NewsletterForm from '@/features/contact/components/newsletter-form'
+import RecentPosts from '@/features/posts/components/recent-posts'
+import RecentProjects from '@/features/projects/components/recent-projects'
 import React from 'react'
 
 const Home = () => {

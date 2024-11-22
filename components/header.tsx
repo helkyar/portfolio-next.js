@@ -1,6 +1,5 @@
-import React from 'react'
-import Link from 'next/link'
 import ThemeToggle from '@/components/theme-toggle'
+import { Link } from '@/i18n/routing'
 
 // constants
 const posts = 'Posts'

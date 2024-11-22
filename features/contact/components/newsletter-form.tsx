@@ -1,14 +1,14 @@
 'use client'
 
 import { resolver, schema } from '@/lib/schema-validation'
-import { NewsletterFormSchema } from '@/lib/schemas'
+import { NewsletterFormSchema } from '@/features/contact/lib/schemas'
 import { useForm, SubmitHandler } from '@/lib/form-hooks'
-import { subscribe } from '@/lib/actions'
+import { subscribe } from '@/features/contact/lib/actions'
 import { toast } from '@/components/ui/toast'
-import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Card, CardContent } from '@/components/ui/card'
+import { Link } from '@/i18n/routing'
 
 const t = {
   error: 'Something went wrong. Please try again.',

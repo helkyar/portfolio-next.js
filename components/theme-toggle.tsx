@@ -7,7 +7,6 @@ import { Theme } from '@/data/theme-constants'
 
 const t = { tooltip: 'Toggle theme' }
 
-// component
 const ThemeToggle = () => {
   const { setTheme, resolvedTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
