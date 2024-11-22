@@ -4,7 +4,7 @@ const withNextIntl = createNextIntlPlugin()
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // webpack5: true,
+  webpack5: true,
   webpack: (config, { isServer }) => {
     if (isServer) {
       config.resolve.fallback = { fs: false, path: false }

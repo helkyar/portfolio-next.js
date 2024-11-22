@@ -5,17 +5,27 @@ import {
   File as PrivacyPolicy,
 } from '@/data/types'
 import { getFiles, getFilesBySlug } from '@/lib/file-parser'
+import { LOCALE_DEFAULT } from '@/data/constants'
 
-const rootDirectory = path.join(process.cwd(), 'content', 'privacy')
-
-export async function getPrivacyBySlug(
-  slug: string,
-): Promise<PrivacyPolicy | null> {
-  return getFilesBySlug(slug, rootDirectory)
+async function getRootDirectory(locale: string = LOCALE_DEFAULT) {
+  return path.join(process.cwd(), 'content/privacy', locale)
 }
 
+export function getPrivacyBySlug(locale: string) {
+  return async (slug: string): Promise<PrivacyPolicy | null> => {
+    const rootDirectory = await getRootDirectory(locale)
+    return getFilesBySlug(slug, rootDirectory)
+  }
+}
+
+type Params = {
+  limit?: number
+  locale?: string
+}
 export async function getPrivacyPolicy(
-  limit?: number,
+  data: Params = {},
 ): Promise<PrivacyPolicyMetadata[]> {
+  const { limit, locale } = data
+  const rootDirectory = await getRootDirectory(locale)
   return getFiles(rootDirectory, limit)
 }
