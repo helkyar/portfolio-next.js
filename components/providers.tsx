@@ -9,12 +9,7 @@ type PropTypes = { readonly children: React.ReactNode }
 
 const Providers = ({ children }: PropTypes) => {
   return (
-    <ThemeProvider
-      enableSystem
-      attribute='class'
-      defaultTheme='system'
-      disableTransitionOnChange
-    >
+    <ThemeProvider enableSystem attribute='class' defaultTheme='system'>
       {children}
       <ToasterProvider />
     </ThemeProvider>

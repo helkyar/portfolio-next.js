@@ -79,7 +79,12 @@
     @apply border-border;
   }
   body {
+    @apply transition-colors;
     @apply bg-background text-foreground;
+  }
+
+  header {
+    @apply transition-colors;
   }
 
   .title {
