@@ -9,7 +9,7 @@ type PropTypes = {
 
 export default function Projects({ projects }: PropTypes) {
   return (
-    <ul className='grid grid-cols-1 gap-8 sm:min-w-[400px] sm:grid-cols-[repeat(auto-fill,_minmax(200px,_1fr))]'>
+    <ul className='grid grid-cols-1 justify-center gap-8 sm:min-w-[400px] sm:grid-cols-[repeat(auto-fill,_minmax(200px,_1fr))]'>
       {projects.map((project) => (
         <li key={project.slug} className='group relative'>
           <Link href={`/projects/${project.slug}`}>

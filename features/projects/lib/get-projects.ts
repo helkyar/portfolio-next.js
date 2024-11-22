@@ -2,9 +2,9 @@ import path from 'path'
 
 import { FileMetadata as ProjectMetadata, File as Project } from '@/data/types'
 import { getFiles, getFilesBySlug } from '@/lib/file-parser'
-import { LOCALE } from '@/data/constants'
+import { LOCALE_DEFAULT } from '@/data/constants'
 
-async function getRootDirectory(locale: string = LOCALE.default) {
+async function getRootDirectory(locale: string = LOCALE_DEFAULT) {
   return path.join(process.cwd(), 'features/projects/content', locale)
 }
 
