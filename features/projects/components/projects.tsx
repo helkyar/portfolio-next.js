@@ -9,18 +9,20 @@ type PropTypes = {
 
 export default function Projects({ projects }: PropTypes) {
   return (
-    <ul className='grid grid-cols-1 justify-center gap-8 sm:min-w-[400px] sm:grid-cols-[repeat(auto-fill,_minmax(200px,_1fr))]'>
+    <ul className='grid grid-cols-1 gap-8 sm:flex sm:min-w-[400px] sm:flex-wrap'>
       {projects.map((project) => (
-        <li key={project.slug} className='group relative'>
+        <li key={project.slug} className='group relative sm:flex-[1_1_200px]'>
           <Link href={`/projects/${project.slug}`}>
             {project.image && (
               <div className='relative h-72 w-full overflow-hidden rounded-lg bg-muted sm:h-60'>
                 <Image
                   className='rounded-lg object-cover object-center transition-transform duration-500 group-hover:scale-125'
                   src={project.image}
-                  alt={project.title ?? ''}
+                  alt={project.title ?? 'project image'}
                   fill
                   sizes='auto, auto'
+                  placeholder='blur'
+                  blurDataURL={project.image}
                 />
               </div>
             )}

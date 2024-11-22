@@ -12,7 +12,7 @@ export default function Intro() {
       </div>
       <div>
         <Image
-          className='flex-1 rounded-lg grayscale'
+          className='h-auto w-auto flex-1 rounded-lg grayscale'
           src={authorImage}
           alt='Javier Palacios'
           width={175}

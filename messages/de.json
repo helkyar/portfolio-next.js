@@ -66,7 +66,7 @@
       "reset": "Zurücksetzen"
     },
     "ThemeToggle": {
-      "toggle": "Thema wechseln"
+      "tooltip": "Thema wechseln"
     }
   }
 }

@@ -10,10 +10,10 @@ export default function Posts({ posts }: PropTypes) {
     <ul className='flex flex-col gap-4'>
       {posts.map((post: FileMetadata) => (
         <Card key={post.slug} className='rounded-lg border-0 dark:border'>
-          <li className='hover:shadow-box rounded-lg hover:scale-[1.01] hover:bg-black hover:bg-opacity-5 dark:hover:bg-muted'>
+          <li className='hover:shadow-box rounded-lg transition-all hover:scale-[1.01] hover:bg-black hover:bg-opacity-5 dark:hover:bg-muted'>
             <Link
               href={`/posts/${post.slug}`}
-              className='flex flex-col justify-between gap-x-4 gap-y-1 rounded-lg p-4 transition-all sm:flex-row'
+              className='flex flex-col justify-between gap-x-4 gap-y-1 rounded-lg p-4 sm:flex-row'
             >
               <div className='max-w-lg'>
                 <p className='text-lg font-semibold'>{post.title}</p>

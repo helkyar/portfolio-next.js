@@ -64,7 +64,7 @@
       "reset": "Restablecer"
     },
     "ThemeToggle": {
-      "toggle": "cambiar tema"
+      "tooltip": "cambiar tema"
     }
   }
 }
