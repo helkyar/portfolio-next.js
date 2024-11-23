@@ -1,5 +1,4 @@
 import path from 'path'
-
 import {
   FileMetadata as PrivacyPolicyMetadata,
   File as PrivacyPolicy,
@@ -8,7 +7,7 @@ import { getFiles, getFilesBySlug } from '@/lib/file-parser'
 import { LOCALE_DEFAULT } from '@/data/constants'
 
 async function getRootDirectory(locale: string = LOCALE_DEFAULT) {
-  return path.join(process.cwd(), 'content/privacy', locale)
+  return path.join(process.cwd(), 'features/contact/content/privacy', locale)
 }
 
 export function getPrivacyBySlug(locale: string) {

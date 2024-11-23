@@ -28,7 +28,12 @@
     "title": "Page not found",
     "description": "Sorry, we couldn't find the page you're looking for.",
     "subtitle": "404",
-    "link": "Go back home"
+    "home": "Go to homepage",
+    "back": "Previous page"
+  },
+  "ErrorPage": {
+    "title": "Something went wrong!",
+    "link": "Try again"
   },
   "PostsPage": {
     "title": "Posts"

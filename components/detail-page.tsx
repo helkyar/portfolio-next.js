@@ -1,3 +1,4 @@
+'use client'
 import { ArrowLeftIcon } from '@radix-ui/react-icons'
 import MDXContent from '@/components/mdx-content'
 import NewsletterForm from '@/features/contact/components/newsletter-form'
@@ -6,6 +7,7 @@ import { formatDate } from '@/lib/utils'
 import { Link } from '@/i18n/routing'
 import { FileContent } from '@/data/types'
 import { useTranslation } from '@/lib/translations'
+import { useRouter } from 'next/navigation'
 
 interface PageContent extends FileContent {
   readonly path?: string
@@ -20,11 +22,13 @@ export default function DetailPage({
   path = '/',
 }: PageContent) {
   const { t } = useTranslation('DetailPage')
+  const { back } = useRouter()
   return (
     <section className='pb-20 pt-20'>
       <div className='container mx-auto max-w-3xl'>
         <Link
-          href={path}
+          onClick={back}
+          href={''}
           className='mb-8 inline-flex items-center gap-2 text-sm font-light text-muted-foreground transition-colors hover:text-foreground'
         >
           <ArrowLeftIcon className='h-5 w-5' />

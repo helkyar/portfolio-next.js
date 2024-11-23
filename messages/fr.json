@@ -26,9 +26,14 @@
   },
   "NotFound": {
     "title": "Page non trouvée",
-    "description": "Désolé, nous n'avons pas pu trouver la page que vous recherchez.",
+    "description": "Désolé, nous n'avons pas pu trouver la page que vous cherchez.",
     "subtitle": "404",
-    "link": "Retour à l'accueil"
+    "home": "Retour à l'accueil",
+    "back": "Page précédente"
+  },
+  "ErrorPage": {
+    "title": "Quelque chose a mal tourné!",
+    "link": "Réessayer"
   },
   "PostsPage": {
     "title": "Articles"

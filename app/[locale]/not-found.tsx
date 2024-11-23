@@ -17,17 +17,17 @@ export default function NotFound() {
                 <h1 className='sm:text- text-3xl font-bold tracking-tight sm:text-5xl'>
                   {t('title')}
                 </h1>
-                <p className='mt-1 text-base text-muted-foreground'>
+                <p className='mt-4 text-base text-muted-foreground'>
                   {t('description')}
                 </p>
               </div>
-              <div className='mt-10 text-base text-muted-foreground'>
+              <div className='mt-10 bg-muted text-base text-muted-foreground hover:bg-accent'>
                 <Link
                   href='/'
                   className='inline-flex items-center gap-3 text-muted-foreground hover:text-foreground'
                 >
                   <ArrowLeftIcon className='h-5 w-5' />
-                  <span>{t('link')}</span>
+                  <span>{t('home')}</span>
                 </Link>
               </div>
             </div>
