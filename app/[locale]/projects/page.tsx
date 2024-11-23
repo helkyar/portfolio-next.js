@@ -1,8 +1,5 @@
 import { MainContainer } from '@/components/main-container'
-import {
-  ProjectsListSkeleton,
-  RecentProjectsSkeleton,
-} from '@/components/ui/skeletons'
+import { ProjectsListSkeleton } from '@/components/ui/skeletons'
 import ProjectsWithSearch from '@/features/projects/components/projects-with-search'
 import { getProjects } from '@/features/projects/lib/get-projects'
 import { useTranslation } from '@/lib/translations'

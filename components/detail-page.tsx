@@ -9,7 +9,6 @@ import { useTranslation } from '@/lib/translations'
 import { useRouter } from 'next/navigation'
 import { formatDate } from '@/lib/utils'
 import { useLocale } from 'next-intl'
-import { Suspense } from 'react'
 
 type PageContent = FileContent & {
   readonly path?: string
@@ -33,7 +32,6 @@ export default function DetailPage({ children, path }: PropTypes) {
           <ArrowLeftIcon className='h-5 w-5' />
           <span>{t('back')}</span>
         </Link>
-        {/* <Suspense fallback={'null'}>{children}</Suspense> */}
         {children}
       </div>
 

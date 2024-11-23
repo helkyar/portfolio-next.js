@@ -3,10 +3,7 @@ import { getFileContent } from '@/lib/file-parser'
 import { getPosts, getPostsBySlug } from '@/features/posts/lib/get-posts'
 import { getLocale } from 'next-intl/server'
 import { Suspense } from 'react'
-import {
-  DetailWithImageSkeleton,
-  RecentPostsSkeleton,
-} from '@/components/ui/skeletons'
+import { DetailWithImageSkeleton } from '@/components/ui/skeletons'
 
 export async function generateStaticParams() {
   const posts = await getPosts()
