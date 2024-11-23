@@ -1,6 +1,7 @@
 import { FileMetadata } from '@/data/types'
 import { Link } from '@/i18n/routing'
 import { formatDate } from '@/lib/utils'
+import { useLocale } from 'next-intl'
 import Image from 'next/image'
 
 type PropTypes = {
@@ -8,6 +9,7 @@ type PropTypes = {
 }
 
 export default function Projects({ projects }: PropTypes) {
+  const locale = useLocale()
   return (
     <ul className='grid grid-cols-1 gap-8 sm:flex sm:min-w-[400px] sm:flex-wrap'>
       {projects.map((project) => (
@@ -38,7 +40,7 @@ export default function Projects({ projects }: PropTypes) {
 
               {project.publishedAt && (
                 <p className='text-xs font-light text-muted-foreground'>
-                  {formatDate(project.publishedAt)}
+                  {formatDate(project.publishedAt, locale)}
                 </p>
               )}
             </div>

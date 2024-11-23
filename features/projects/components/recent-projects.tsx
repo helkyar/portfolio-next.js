@@ -5,6 +5,12 @@ import { DEFAULT_PROJECTS_PREVIEW } from '@/data/constants'
 import { getTranslation } from '@/lib/translations'
 import { getLocale } from 'next-intl/server'
 
+export async function generateStaticParams() {
+  const projects = await getProjects({ limit: DEFAULT_PROJECTS_PREVIEW })
+  const locale = await getLocale()
+  return { projects, locale }
+}
+
 export default async function RecentProjects() {
   const { t } = await getTranslation('HomePage.Projects')
   const locale = await getLocale()
@@ -12,6 +18,7 @@ export default async function RecentProjects() {
     locale,
     limit: DEFAULT_PROJECTS_PREVIEW,
   })
+
   return (
     <section>
       <h2 className='title mb-4'>{t('title')}</h2>

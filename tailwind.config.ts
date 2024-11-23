@@ -10,6 +10,13 @@ const config: Config = {
     './features/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    keyframes: {
+      shimmer: {
+        '100%': {
+          transform: 'translateX(100%)',
+        },
+      },
+    },
     extend: {
       colors: {
         background: 'hsl(var(--background))',

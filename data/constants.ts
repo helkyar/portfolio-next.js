@@ -8,7 +8,7 @@ export const LOCALE = {
   de: 'deutsch',
   fr: 'français',
 }
-export const LOCALE_DEFAULT = 'en'
+export const LOCALE_DEFAULT = 'es'
 export type Locale = keyof typeof LOCALE
 
 export const DEFAULT_POSTS_PREVIEW = 2
