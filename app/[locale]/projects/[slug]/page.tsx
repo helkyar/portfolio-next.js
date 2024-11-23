@@ -16,7 +16,7 @@ export async function generateStaticParams() {
 
 type PropTypes = { readonly params: { slug: string } }
 
-export default function ProjectDetailPage({ params }: PropTypes) {
+export default async function ProjectDetailPage({ params }: PropTypes) {
   return (
     <DetailPage path='/projects'>
       <Suspense fallback={<DetailWithImageSkeleton />}>

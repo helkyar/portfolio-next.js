@@ -15,7 +15,7 @@ type PropTypes = {
   readonly params: { slug: string }
 }
 
-export default function PostDetailPage({ params }: PropTypes) {
+export default async function PostDetailPage({ params }: PropTypes) {
   return (
     <DetailPage path='/posts'>
       <Suspense fallback={<DetailWithImageSkeleton />}>
