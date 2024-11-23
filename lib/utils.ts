@@ -1,6 +1,5 @@
 import { clsx, type ClassValue } from 'clsx'
 import { twMerge } from 'tailwind-merge'
-import { useLocale } from 'next-intl'
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -20,8 +19,7 @@ export function cn(...inputs: ClassValue[]) {
     );
   };
  */
-export function formatDate(date: string) {
-  const locale = useLocale()
+export function formatDate(date: string, locale: string) {
   return new Date(date).toLocaleDateString(locale, {
     year: 'numeric',
     month: 'long',

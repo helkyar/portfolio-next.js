@@ -2,10 +2,12 @@ import { formatDate } from '@/lib/utils'
 import { FileMetadata } from '@/data/types'
 import { Card } from '@/components/ui/card'
 import { Link } from '@/i18n/routing'
+import { useLocale } from 'next-intl'
 
 type PropTypes = { readonly posts: FileMetadata[] }
 
 export default function Posts({ posts }: PropTypes) {
+  const locale = useLocale()
   return (
     <ul className='flex flex-col gap-4'>
       {posts.map((post: FileMetadata) => (
@@ -23,7 +25,7 @@ export default function Posts({ posts }: PropTypes) {
               </div>
               {post.publishedAt && (
                 <p className='mt-1 text-sm font-light'>
-                  {formatDate(post.publishedAt)}
+                  {formatDate(post.publishedAt, locale)}
                 </p>
               )}
             </Link>
