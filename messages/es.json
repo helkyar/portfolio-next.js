@@ -26,9 +26,14 @@
   },
   "NotFound": {
     "title": "Página no encontrada",
-    "description": "Lo siento, no pudimos encontrar la página que estás buscando.",
+    "description": "Lo sentimos, no pudimos encontrar la página que estás buscando.",
     "subtitle": "404",
-    "link": "Volver a inicio"
+    "home": "Volver a inicio",
+    "back": "Página anterior"
+  },
+  "ErrorPage": {
+    "title": "Algo ha ido mal!",
+    "link": "Volver a intentar"
   },
   "PostsPage": {
     "title": "Publicaciones"

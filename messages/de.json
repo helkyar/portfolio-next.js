@@ -28,7 +28,12 @@
     "title": "Seite nicht gefunden",
     "description": "Entschuldigung, wir konnten die gesuchte Seite nicht finden.",
     "subtitle": "404",
-    "link": "Zurück zur Startseite"
+    "home": "Zur Startseite",
+    "back": "Zurück zur vorherigen Seite"
+  },
+  "ErrorPage": {
+    "title": "Etwas ist schief gelaufen!",
+    "link": "Erneut versuchen"
   },
   "PostsPage": {
     "title": "Beiträge"
