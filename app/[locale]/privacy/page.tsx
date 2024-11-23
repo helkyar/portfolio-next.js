@@ -14,7 +14,7 @@ export async function generateStaticParams() {
   return slugs
 }
 
-export default function PrivacyDetailPage() {
+export default async function PrivacyDetailPage() {
   return (
     <DetailPage path='/contact'>
       <Suspense fallback={<DetailSkeleton />}>
