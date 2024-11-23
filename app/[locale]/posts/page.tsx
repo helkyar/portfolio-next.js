@@ -1,8 +1,5 @@
 import { MainContainer } from '@/components/main-container'
-import {
-  PostsListSkeleton,
-  RecentPostsSkeleton,
-} from '@/components/ui/skeletons'
+import { PostsListSkeleton } from '@/components/ui/skeletons'
 import PostsWithSearch from '@/features/posts/components/posts-with-search'
 import { getPosts } from '@/features/posts/lib/get-posts'
 import { useTranslation } from '@/lib/translations'
