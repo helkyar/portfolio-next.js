@@ -58,7 +58,7 @@ export async function getFileContent(
   }
 
   const { metadata, content } = project
-  const { title, image, author, publishedAt } = metadata
+  const { title, image, author, publishedAt, no_ratio } = metadata
 
   return {
     content,
@@ -66,5 +66,6 @@ export async function getFileContent(
     image,
     author,
     publishedAt,
+    no_ratio,
   }
 }

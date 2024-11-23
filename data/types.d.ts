@@ -9,6 +9,7 @@ export type FileMetadata = {
   readonly image?: string
   readonly author?: string
   readonly publishedAt?: string
+  readonly no_ratio?: string
   readonly slug: string
 }
 
@@ -18,4 +19,5 @@ export type FileContent = {
   readonly image: string | undefined
   readonly publishedAt: string | undefined
   readonly author: string | undefined
+  readonly no_ratio: string | undefined
 }

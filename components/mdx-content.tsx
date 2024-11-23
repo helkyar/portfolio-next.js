@@ -4,26 +4,28 @@ import { MDXRemote, MDXRemoteProps } from 'next-mdx-remote/rsc'
 
 import Counter from '@/components/counter'
 
-function Code({ children, ...props }: HTMLAttributes<HTMLElement>) {
+type PropTypes = Readonly<HTMLAttributes<HTMLElement>>
+
+function Code({ children, ...props }: PropTypes) {
   const codeHTML = highlight(children as string)
   return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />
 }
 
-function H2({ children, ...props }: HTMLAttributes<HTMLElement>) {
+function H2({ children, ...props }: PropTypes) {
   return (
     <h2 className='title my-6' {...props}>
       {children}
     </h2>
   )
 }
-function P({ children, ...props }: HTMLAttributes<HTMLElement>) {
+function P({ children, ...props }: PropTypes) {
   return (
     <p className='my-4 text-base text-muted-foreground' {...props}>
       {children}
     </p>
   )
 }
-function A({ children, ...props }: HTMLAttributes<HTMLElement>) {
+function A({ children, ...props }: PropTypes) {
   return (
     <a className='cursor-pointer text-foreground underline' {...props}>
       {children}

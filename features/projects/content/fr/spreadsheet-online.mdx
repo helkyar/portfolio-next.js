@@ -1,6 +1,63 @@
 ---
-  title: Kommt bald...
-  summary: Ein Full-Stack E-Commerce-Store, gebaut mit NextJs, React und Stripe.
-  image: /images/projects/ecommerce-store.jpg
+  title: Tableur en ligne
+  summary: Une version légère d'une application de tableur qui permet aux utilisateurs de créer, éditer et partager des tableurs en ligne facilement.
+  image: /images/projects/spreadsheet.jpg
+  no_ratio: true
   author: 'Javier Palacios'
+  publishedAt: '2024-11-20'
 ---
+
+[Démo](https://helkyar-spreadsheet.vercel.app/) /
+[Code](https://github.com/helkyar/spreadsheet)
+
+Ce projet offre un outil léger et accessible pour la gestion des données en
+ligne, permettant aux utilisateurs d'accéder à leurs feuilles de calcul depuis
+n'importe quel appareil connecté à Internet. Basé sur React avec Typescript,
+Vitest pour les tests et Sonner pour les messages dynamiques, il a amélioré mes
+compétences en développement web et m'a permis d'explorer des architectures et
+des modèles de conception.
+
+## Technologies
+
+- React avec Typescript
+- Vitest pour les tests
+- Sonner pour les messages toast
+
+## Fonctionnalités
+
+- **Gestion des fichiers**: Télécharger et téléverser des feuilles
+- **Sélection à la souris et au clavier**: Sélectionner des colonnes, des lignes
+  et des zones de cellules pour l'édition, la suppression, le glisser-déposer ou
+  la gestion du presse-papiers
+- **Menu contextuel personnalisé**: Pour gérer le presse-papiers et l'édition de
+  matrices
+- **Créer des références**: Référencer des cellules et détecter les références
+  cycliques
+- **Édition dynamique de matrices**: Ajouter et supprimer des colonnes et des
+  lignes en actualisant toute référence de cellule existante
+- **Accessibilité complète au clavier**
+- **Responsive**
+
+## Améliorations futures
+
+Il n'y a pas de fin à la création d'un tableur pleinement fonctionnel...
+
+- **Plus de fonctionnalités**: L'une des plus intéressantes à explorer est la
+  référence des cellules d'autres feuilles ainsi que la personnalisation des
+  styles de cellules (couleur, police, format, ...). Redimensionnement des
+  cellules et combinaison de cellules, sélection multiple de colonnes ou de
+  lignes et permettre de les glisser et insérer avec une animation de
+  prévisualisation, annuler et refaire...
+- **Fonctionnalités plus dynamiques**: Permettre d'insérer des images et de
+  générer des graphiques
+- **Analyses avancées**: Intégrer des analyses plus sophistiquées pour mieux
+  comprendre le comportement des utilisateurs et l'engagement avec le contenu.
+
+## Conclusion
+
+Construire ce projet a été une expérience enrichissante qui m'a permis de
+plonger profondément dans la gestion des données matricielles. L'utilisation de
+principes comme SOLID et DRY en conjonction avec certains modèles m'a permis de
+créer une plateforme qui est non seulement fonctionnelle mais aussi évolutive et
+facile à maintenir. Alors que je continue de grandir et d'évoluer en tant que
+développeur, j'ai hâte d'améliorer ce site.

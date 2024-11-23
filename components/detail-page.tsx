@@ -7,12 +7,9 @@ import { Link } from '@/i18n/routing'
 import { FileContent } from '@/data/types'
 import { useTranslation } from '@/lib/translations'
 import { useRouter } from 'next/navigation'
-import { formatDate } from '@/lib/utils'
+import { cn, formatDate } from '@/lib/utils'
 import { useLocale } from 'next-intl'
 
-type PageContent = FileContent & {
-  readonly path?: string
-}
 type PropTypes = {
   readonly children: React.ReactNode
   readonly path: string
@@ -50,7 +47,8 @@ export function DetailContent({
   image,
   publishedAt,
   title,
-}: PageContent) {
+  no_ratio,
+}: Readonly<FileContent>) {
   const locale = useLocale()
   return (
     <>
@@ -59,7 +57,7 @@ export function DetailContent({
           <Image
             src={image}
             alt={title ?? ''}
-            className='object-cover'
+            className={cn({ ['object-cover']: !no_ratio })}
             fill
             sizes='(min-width: 640px) 640px, 100vw'
             priority
