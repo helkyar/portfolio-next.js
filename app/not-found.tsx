@@ -1,9 +1,9 @@
 import { Link } from '@/i18n/routing'
-import { getTranslation } from '@/lib/translations'
+import { useTranslation } from '@/lib/translations'
 import { ArrowLeftIcon } from '@radix-ui/react-icons'
 
-export default async function NotFound() {
-  const { t } = await getTranslation('NotFound')
+export default function NotFound() {
+  const { t } = useTranslation('NotFound')
   return (
     <section className='pb-24 pt-40'>
       <div className='sm:py-s4 min-h-full px-4 sm:px-6 md:grid md:place-items-center lg:px-8'>
