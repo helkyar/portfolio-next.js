@@ -6,7 +6,7 @@ import Providers from '@/components/providers'
 import Header from '@/features/layout/header'
 import Footer from '@/features/layout/footer'
 import { NextIntlClientProvider } from 'next-intl'
-import { getMessages } from 'next-intl/server'
+import { getMessages, setRequestLocale } from 'next-intl/server'
 import { routing } from '@/i18n/routing'
 import { notFound } from 'next/navigation'
 import { Locale } from '@/data/constants'
@@ -35,6 +35,7 @@ export default async function RootLayout({
     notFound()
   }
 
+  setRequestLocale(locale)
   // Providing all messages to the client side
   const messages = await getMessages()
 
