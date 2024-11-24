@@ -11,17 +11,6 @@
     "Projects": {
       "title": "Proyectos Recientes",
       "link": "Ver todos los proyectos"
-    },
-    "Newsletter": {
-      "error": "Algo salió mal. Por favor, inténtalo de nuevo.",
-      "success": "¡Gracias por suscribirte!",
-      "privacy_link": "política de privacidad",
-      "privacy_text": "Nos preocupamos por tus datos. Lee nuestra ",
-      "is_submitting": "Enviando...",
-      "submit": "Suscribirse",
-      "title": "Suscríbete al boletín",
-      "description": "Recibe las últimas actualizaciones sobre mi trabajo y proyectos",
-      "email_placeholder": "ejemplo@email.com"
     }
   },
   "NotFound": {
@@ -55,6 +44,20 @@
     }
   },
   "ContactPage": {
+    "ContactEmail": {
+      "subject": "Nuevo mensaje del formulario de contacto",
+      "text": "`Nombre: {name}\nCorreo electrónico: {email}\nMensaje: {message}",
+      "title": "Envío del formulario de contacto",
+      "subtitle": "De <strong>{name}</strong> en {email}",
+      "message": "Mensaje:"
+    },
+    "NewsletterEmail": {
+      "subject": "Suscripción al boletín",
+      "text": "¡Gracias por suscribirte a nuestro boletín!",
+      "title": "¡Gracias por suscribirte!",
+      "content": "Estamos emocionados de tenerte a bordo. Recibirás actualizaciones sobre nuestras últimas noticias, artículos y ofertas especiales directamente en tu bandeja de entrada. ¡Mantente al tanto!",
+      "footer": "Por favor, contáctanos si tienes alguna pregunta. (Si respondes a este correo electrónico, no podremos verlo.)"
+    },
     "title": "Hablemos sobre tu proyecto",
     "submitting": "Enviando...",
     "submit": "Enviar",
@@ -70,6 +73,17 @@
     },
     "ThemeToggle": {
       "tooltip": "cambiar tema"
+    },
+    "Newsletter": {
+      "error": "Algo salió mal. Por favor, inténtalo de nuevo.",
+      "success": "¡Gracias por suscribirte!",
+      "privacy_link": "política de privacidad",
+      "privacy_text": "Nos preocupamos por tus datos. Lee nuestra ",
+      "is_submitting": "Enviando...",
+      "submit": "Suscribirse",
+      "title": "Suscríbete al boletín",
+      "description": "Recibe las últimas actualizaciones sobre mi trabajo y proyectos",
+      "email_placeholder": "ejemplo@email.com"
     }
   }
 }

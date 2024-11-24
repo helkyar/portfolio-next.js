@@ -24,8 +24,8 @@ export async function sendEmail(data: ContactFormInputs) {
     const { name, email, message } = result.data
     const { data, error } = await resend.emails.send({
       from: personalEmail,
-      to: ['delivered@resend.dev'],
-      // cc: [personalEmail],
+      to: [email],
+      cc: [personalEmail],
       subject: t('subject'),
       text: t('text', { name, email, message }),
       react: ContactFormEmail({ name, email, message }),
@@ -53,11 +53,11 @@ export async function subscribe(data: NewsletterFormInputs) {
     })
     const { data: sendData, error: sendError } = await resend.emails.send({
       from: personalEmail,
-      to: ['delivered@resend.dev'],
-      // cc: [personalEmail],
+      to: [email],
+      cc: [personalEmail],
       subject: t('subject'),
       text: t('text'),
-      react: NewsletterWelcomeEmail({ email }),
+      react: NewsletterWelcomeEmail(),
     })
     const hasFailed = !sendData || sendError || !data || error
     if (hasFailed) throw new Error('Failed to subscribe')

@@ -1,22 +1,24 @@
+import { Container } from '@/features/contact/templates/container'
+import { useTranslation } from '@/lib/translations'
+
 interface ContactFormEmailProps {
-  name: string
-  email: string
-  message: string
+  readonly name: string
+  readonly email: string
+  readonly message: string
 }
 
-const ContactFormEmail: React.FC<Readonly<ContactFormEmailProps>> = ({
+export default function ContactFormEmail({
   name,
   email,
   message,
-}) => (
-  <div>
-    <h1>Contact form submission</h1>
-    <p>
-      From <strong>{name}</strong> at {email}
-    </p>
-    <h2>Message:</h2>
-    <p>{message}</p>
-  </div>
-)
-
-export default ContactFormEmail
+}: ContactFormEmailProps) {
+  const { t } = useTranslation('ContactPage.ContactEmail')
+  return (
+    <Container>
+      <h1>{t('title')}</h1>
+      <p>{t('subtitle', { name, email })}</p>
+      <h2>{t('message')}</h2>
+      <p>{message}</p>
+    </Container>
+  )
+}

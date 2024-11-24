@@ -1,17 +1,20 @@
-interface ContactFormEmailProps {
-  email: string
+import { Container } from '@/features/contact/templates/container'
+import { useTranslation } from '@/lib/translations'
+
+export default function NewsletterWelcomeEmail() {
+  const { t } = useTranslation('ContactPage.NewsletterEmail')
+  return (
+    <Container>
+      <h1>{t('title')}</h1>
+
+      <p>{t('content')}</p>
+      <p style={ghost}>{t('footer')} </p>
+    </Container>
+  )
 }
 
-const NewsletterWelcomeEmail: React.FC<Readonly<ContactFormEmailProps>> = ({
-  email,
-}) => (
-  <div>
-    <h1>Thank you for subscribing!</h1>
-    <p>
-      From <strong>{email}</strong>
-    </p>
-    <h2>Message:</h2>
-  </div>
-)
-
-export default NewsletterWelcomeEmail
+const ghost = {
+  color: '#6B7280',
+  fontSize: '0.875rem',
+  marginTop: '1rem',
+}

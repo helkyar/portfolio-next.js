@@ -11,17 +11,6 @@
     "Projects": {
       "title": "Projets Récents",
       "link": "Voir tous les projets"
-    },
-    "Newsletter": {
-      "error": "Quelque chose s'est mal passé. Veuillez réessayer.",
-      "success": "Merci pour votre abonnement !",
-      "privacy_link": "politique de confidentialité",
-      "privacy_text": "Nous nous soucions de vos données. Lisez notre ",
-      "is_submitting": "Envoi en cours...",
-      "submit": "S'abonner",
-      "title": "Abonnez-vous à la newsletter",
-      "description": "Recevez les dernières mises à jour sur mon travail et mes projets",
-      "email_placeholder": "exemple@email.com"
     }
   },
   "NotFound": {
@@ -55,6 +44,20 @@
     }
   },
   "ContactPage": {
+    "ContactEmail": {
+      "subject": "Nouveau message du formulaire de contact",
+      "text": "`Nom: {name}\nEmail: {email}\nMessage: {message}",
+      "title": "Soumission du formulaire de contact",
+      "subtitle": "De <strong>{name}</strong> à {email}",
+      "message": "Message:"
+    },
+    "NewsletterEmail": {
+      "subject": "Abonnement à la newsletter",
+      "text": "Merci de vous être abonné à notre newsletter!",
+      "title": "Merci pour votre abonnement!",
+      "content": " Nous sommes ravis de vous compter parmi nous. Vous recevrez des mises à jour sur nos dernières nouvelles, articles et offres spéciales directement dans votre boîte de réception. Restez à l'écoute!",
+      "footer": " Veuillez nous contacter si vous avez des questions. (Si vous répondez à cet e-mail, nous ne pourrons pas le voir.)"
+    },
     "title": "Parlons de votre projet",
     "submitting": "Envoi en cours...",
     "submit": "Envoyer",
@@ -72,6 +75,17 @@
     },
     "ThemeToggle": {
       "tooltip": "changer de thème"
+    },
+    "Newsletter": {
+      "error": "Quelque chose s'est mal passé. Veuillez réessayer.",
+      "success": "Merci pour votre abonnement !",
+      "privacy_link": "politique de confidentialité",
+      "privacy_text": "Nous nous soucions de vos données. Lisez notre ",
+      "is_submitting": "Envoi en cours...",
+      "submit": "S'abonner",
+      "title": "Abonnez-vous à la newsletter",
+      "description": "Recevez les dernières mises à jour sur mon travail et mes projets",
+      "email_placeholder": "exemple@email.com"
     }
   }
 }
