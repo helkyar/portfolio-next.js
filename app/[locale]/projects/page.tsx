@@ -7,13 +7,8 @@ import { getTranslation } from '@/lib/translations'
 import { getLocale } from 'next-intl/server'
 import { Suspense } from 'react'
 
-export async function generateStaticParams() {
-  const projects = await getProjects()
-  return projects
-}
-
 type PropTypes = {
-  searchParams?: Promise<{
+  readonly searchParams?: Promise<{
     [key: string]: string | undefined
     page?: string
   }>
@@ -34,7 +29,8 @@ export default async function ProjectsPage(props: PropTypes) {
     </MainContainer>
   )
 }
-async function FetchPostsWithSearchParams({ query }: { query: string }) {
+type Query = { readonly query: string }
+async function FetchPostsWithSearchParams({ query }: Query) {
   const locale = await getLocale()
   const posts = await getProjects({ locale })
 
