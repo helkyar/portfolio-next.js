@@ -7,8 +7,9 @@ const send = async (req: NextApiRequest, res: NextApiResponse) => {
   const { data, error } = await resend.emails.send({
     from: 'Acme <onboarding@resend.dev>',
     to: ['delivered@resend.dev'],
+    cc: personalEmail,
     subject: 'Hello world',
-    react: NewsletterWelcomeEmail({ email: personalEmail }),
+    react: NewsletterWelcomeEmail(),
   })
 
   if (error) {
