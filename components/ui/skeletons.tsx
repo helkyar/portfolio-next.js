@@ -2,6 +2,10 @@
 const shimmer =
   'before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_1.5s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/60 before:to-transparent'
 
+type SkeletonProps = {
+  readonly limit: number
+}
+
 export function PostSkeleton() {
   return (
     <div
@@ -17,15 +21,15 @@ export function PostSkeleton() {
     </div>
   )
 }
-export function RecentPostsSkeleton({ limit }: { limit: number }) {
+export function RecentPostsSkeleton({ limit }: SkeletonProps) {
   return (
     <div className='flex flex-col gap-5'>
-      <h2
+      <div
         className={`${shimmer} relative h-10 w-96 overflow-hidden rounded-lg bg-muted`}
-      ></h2>
+      ></div>
 
-      {[...Array(limit)].map((_, index) => (
-        <PostSkeleton key={index} />
+      {[...Array(limit)].map((i) => (
+        <PostSkeleton key={i} />
       ))}
 
       <div
@@ -35,12 +39,12 @@ export function RecentPostsSkeleton({ limit }: { limit: number }) {
   )
 }
 
-export function PostsListSkeleton({ limit }: { limit: number }) {
+export function PostsListSkeleton({ limit }: SkeletonProps) {
   return (
     <div>
       <div className='flex flex-col gap-5'>
-        {[...Array(limit)].map((_, index) => (
-          <PostSkeleton key={index} />
+        {[...Array(limit)].map((i) => (
+          <PostSkeleton key={i} />
         ))}
       </div>
     </div>
@@ -57,7 +61,7 @@ export function ProjectSkeleton() {
         className={`${shimmer} absolute inset-0 overflow-hidden rounded-lg bg-accent`}
       />
       <div className='absolute inset-x-0 bottom-0 flex translate-y-2 flex-col gap-2 rounded-lg px-6 py-5'>
-        <h2 className='title line-clamp-1 h-6 w-3/4 rounded-lg bg-muted text-xl no-underline'></h2>
+        <div className='title line-clamp-1 h-6 w-3/4 rounded-lg bg-muted text-xl no-underline'></div>
         <p className='line-clamp-1 h-3 w-full rounded-lg bg-muted text-sm text-muted-foreground'></p>
 
         <p className='h-3 w-40 rounded-lg bg-muted text-xs font-light text-muted-foreground'></p>
@@ -66,17 +70,17 @@ export function ProjectSkeleton() {
   )
 }
 
-export function RecentProjectsSkeleton({ limit }: { limit: number }) {
+export function RecentProjectsSkeleton({ limit }: SkeletonProps) {
   return (
     <div className='flex flex-col gap-5'>
-      <h2
+      <div
         className={`${shimmer} relative h-10 w-96 overflow-hidden rounded-lg bg-muted`}
-      ></h2>
+      ></div>
       <div
         className={`grid grid-cols-1 gap-8 sm:flex sm:min-w-[400px] sm:flex-wrap`}
       >
-        {[...Array(limit)].map((_, index) => (
-          <ProjectSkeleton key={index} />
+        {[...Array(limit)].map((i) => (
+          <ProjectSkeleton key={i} />
         ))}
       </div>
       <div
@@ -86,12 +90,12 @@ export function RecentProjectsSkeleton({ limit }: { limit: number }) {
   )
 }
 
-export function ProjectsListSkeleton({ limit }: { limit: number }) {
+export function ProjectsListSkeleton({ limit }: SkeletonProps) {
   return (
     <div>
       <div className='grid grid-cols-1 gap-8 sm:flex sm:min-w-[400px] sm:flex-wrap'>
-        {[...Array(limit)].map((_, index) => (
-          <ProjectSkeleton key={index} />
+        {[...Array(limit)].map((i) => (
+          <ProjectSkeleton key={i} />
         ))}
       </div>
     </div>
@@ -104,18 +108,18 @@ export function DetailSkeleton() {
       <header
         className={`${shimmer} relative overflow-hidden rounded-lg bg-accent p-4`}
       >
-        <h1 className='h-6 w-1/2 rounded-lg bg-muted'></h1>
+        <div className='h-6 w-1/2 rounded-lg bg-muted'></div>
         <p className='mt-3 h-2 w-1/3 rounded-lg bg-muted'></p>
         <p className='mt-12 h-3 rounded-lg bg-muted'></p>
         <p className='mt-3 h-3 rounded-lg bg-muted'></p>
       </header>
       <main className='prose dark:prose-invert mt-3'>
-        {[...Array(2)].map((_, index) => (
+        {[...Array(2)].map((i) => (
           <div
-            key={index}
+            key={i}
             className={`${shimmer} g-2 relative my-2 flex flex-col overflow-hidden rounded-lg bg-accent p-4`}
           >
-            <h2 className='my-6 h-6 w-1/2 rounded-lg bg-muted'></h2>
+            <div className='my-6 h-6 w-1/2 rounded-lg bg-muted'></div>
             <p className='my-4 h-3 rounded-lg bg-muted'></p>
             <p className='my-4 h-3 rounded-lg bg-muted'></p>
             <p className='my-4 h-3 rounded-lg bg-muted'></p>

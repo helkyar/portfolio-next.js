@@ -21,13 +21,11 @@ export const metadata: Metadata = {
 
 type PropTypes = {
   readonly children: React.ReactNode
-  readonly params: { locale: Locale }
+  readonly params: Promise<{ locale: Locale }>
 }
 
-export default async function RootLayout({
-  children,
-  params: { locale },
-}: PropTypes) {
+export default async function RootLayout({ children, params }: PropTypes) {
+  const { locale } = await params
   setRequestLocale(locale)
   const messages = await getMessages()
   return (
