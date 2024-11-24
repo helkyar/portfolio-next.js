@@ -1,20 +1,6 @@
-import { Input } from '@/components/ui/input'
-
 // Loading animation
 const shimmer =
   'before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_1.5s_infinite] before:bg-gradient-to-r before:from-transparent before:via-white/60 before:to-transparent'
-
-function SearchBar() {
-  return (
-    <div className='mb-12 flex items-center gap-3'>
-      <Input
-        type='text'
-        placeholder='react, next, ...'
-        className='h-9 flex-1'
-      />
-    </div>
-  )
-}
 
 export function PostSkeleton() {
   return (
@@ -52,7 +38,6 @@ export function RecentPostsSkeleton({ limit }: { limit: number }) {
 export function PostsListSkeleton({ limit }: { limit: number }) {
   return (
     <div>
-      <SearchBar />
       <div className='flex flex-col gap-5'>
         {[...Array(limit)].map((_, index) => (
           <PostSkeleton key={index} />
@@ -104,7 +89,6 @@ export function RecentProjectsSkeleton({ limit }: { limit: number }) {
 export function ProjectsListSkeleton({ limit }: { limit: number }) {
   return (
     <div>
-      <SearchBar />
       <div className='grid grid-cols-1 gap-8 sm:flex sm:min-w-[400px] sm:flex-wrap'>
         {[...Array(limit)].map((_, index) => (
           <ProjectSkeleton key={index} />

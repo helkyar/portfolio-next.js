@@ -7,7 +7,7 @@ import SearchBar from '@/components/search-bar'
 
 type PropTypes = { readonly projects: FileMetadata[] }
 
-export default function ProjectsWithSearch({ projects }: PropTypes) {
+export function ProjectsWithSearch({ projects }: PropTypes) {
   const [query, setQuery] = useState('')
   const filteredProjects = projects.filter(
     (project) =>

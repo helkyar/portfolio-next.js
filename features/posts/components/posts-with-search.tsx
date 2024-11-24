@@ -7,7 +7,7 @@ import SearchBar from '@/components/search-bar'
 
 type PropTypes = { readonly posts: FileMetadata[] }
 
-export default function PostsWithSearch({ posts }: PropTypes) {
+export function PostsWithSearch({ posts }: PropTypes) {
   const [query, setQuery] = useState('')
   const filteredPosts = posts.filter(
     (post) =>
