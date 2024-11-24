@@ -1,8 +1,9 @@
 import { MainContainer } from '@/components/main-container'
+import { SearchBarParams } from '@/components/prams-search-bar'
 import { PostsListSkeleton } from '@/components/ui/skeletons'
-import PostsWithSearch from '@/features/posts/components/posts-with-search'
+import { PostsWithFilter } from '@/features/posts/components/posts-with-filter'
 import { getPosts } from '@/features/posts/lib/get-posts'
-import { useTranslation } from '@/lib/translations'
+import { getTranslation } from '@/lib/translations'
 import { getLocale } from 'next-intl/server'
 import { Suspense } from 'react'
 
@@ -11,22 +12,31 @@ export async function generateStaticParams() {
   return posts
 }
 
-export default function PostsPage() {
-  const { t } = useTranslation('PostsPage')
+type PropTypes = {
+  searchParams?: Promise<{
+    [key: string]: string | undefined
+    page?: string
+  }>
+}
 
+const searchQuery: string = 'query'
+export default async function PostsPageSearch(props: PropTypes) {
+  const { t } = await getTranslation('PostsPage')
+  const searchParams = await props.searchParams
+  const query = searchParams?.[searchQuery] ?? ''
   return (
     <MainContainer>
       <h1 className='title mb-12'>{t('title')}</h1>
-      <Suspense fallback={<PostsListSkeleton limit={3} />}>
-        <FetchPostsWithSearch />
+      <SearchBarParams query={searchQuery} />
+      <Suspense key={query} fallback={<PostsListSkeleton limit={3} />}>
+        <FetchPostsWithSearchParams query={query} />
       </Suspense>
     </MainContainer>
   )
 }
-
-async function FetchPostsWithSearch() {
+async function FetchPostsWithSearchParams({ query }: { query: string }) {
   const locale = await getLocale()
   const posts = await getPosts({ locale })
 
-  return <PostsWithSearch posts={posts} />
+  return <PostsWithFilter posts={posts} query={query} />
 }
