@@ -64,7 +64,15 @@
     "message_placeholder": "Message",
     "name_placeholder": "Name",
     "error": "Something went wrong. Please try again.",
-    "success": "Thanks for contacting me!"
+    "success": "Thanks for contacting me!",
+    "ContactEmail": {
+      "subject": "New message from the contact form",
+      "text": "`Name: {name}\nEmail: {email}\nMessage: {message}"
+    },
+    "NewsletterEmail": {
+      "subject": "Newsletter subscription",
+      "text": "Thank you for subscribing to our newsletter!"
+    }
   },
   "Components": {
     "SearchBar": {

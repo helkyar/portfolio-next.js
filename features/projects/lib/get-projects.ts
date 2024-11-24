@@ -1,18 +1,13 @@
 import path from 'path'
 
-import { FileMetadata as ProjectMetadata, File as Project } from '@/data/types'
-import { getFiles, getFilesBySlug } from '@/lib/file-parser'
+import { FileMetadata as ProjectMetadata } from '@/data/types'
+import { getFiles } from '@/lib/file-parser'
 import { LOCALE_DEFAULT } from '@/data/constants'
 
-async function getRootDirectory(locale: string = LOCALE_DEFAULT) {
-  return path.join(process.cwd(), 'features/projects/content', locale)
-}
+export const projectDirectory = 'features/projects/content'
 
-export function getProjectsBySlug(locale: string) {
-  return async (slug: string): Promise<Project | null> => {
-    const rootDirectory = await getRootDirectory(locale)
-    return getFilesBySlug(slug, rootDirectory)
-  }
+async function getRootDirectory(locale: string = LOCALE_DEFAULT) {
+  return path.join(process.cwd(), projectDirectory, locale)
 }
 
 type Params = {

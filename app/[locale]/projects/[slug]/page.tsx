@@ -2,7 +2,7 @@ import DetailPage, { DetailContent } from '@/components/detail-page'
 import { getFileContent } from '@/lib/file-parser'
 import {
   getProjects,
-  getProjectsBySlug,
+  projectDirectory,
 } from '@/features/projects/lib/get-projects'
 import { getLocale } from 'next-intl/server'
 import { Suspense } from 'react'
@@ -28,7 +28,7 @@ export default async function ProjectDetailPage({ params }: PropTypes) {
 
 async function FetchProjectDetail({ params }: PropTypes) {
   const locale = await getLocale()
-  const content = await getFileContent(params, getProjectsBySlug(locale))
+  const content = await getFileContent(params, projectDirectory, locale)
 
   return <DetailContent {...content} />
 }

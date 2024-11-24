@@ -29,7 +29,7 @@ export default function Projects({ projects }: PropTypes) {
               </div>
             )}
 
-            <div className='absolute inset-0 rounded-lg bg-background/70 transition-all duration-500 hover:opacity-0' />
+            <div className='absolute inset-0 rounded-lg bg-background/70 transition-all duration-500 group-hover:opacity-0' />
             <div className='absolute inset-x-0 bottom-0 translate-y-2 rounded-lg px-6 py-5 transition-all duration-500 group-hover:translate-y-0 group-hover:bg-background/70 group-hover:opacity-100'>
               <h2 className='title line-clamp-1 text-xl no-underline'>
                 {project.title}
