@@ -11,17 +11,6 @@
     "Projects": {
       "title": "Neueste Projekte",
       "link": "Alle Projekte anzeigen"
-    },
-    "Newsletter": {
-      "error": "Etwas ist schief gelaufen. Bitte versuche es erneut.",
-      "success": "Danke für deine Anmeldung!",
-      "privacy_link": "Datenschutzrichtlinie",
-      "privacy_text": "Wir kümmern uns um deine Daten. Lies unsere ",
-      "is_submitting": "Senden...",
-      "submit": "Abonnieren",
-      "title": "Abonniere den Newsletter",
-      "description": "Erhalte die neuesten Updates zu meiner Arbeit und meinen Projekten",
-      "email_placeholder": "beispiel@email.com"
     }
   },
   "NotFound": {
@@ -55,6 +44,20 @@
     }
   },
   "ContactPage": {
+    "ContactEmail": {
+      "subject": "Neue Nachricht vom Kontaktformular",
+      "text": "`Name: {name}\nE-Mail: {email}\nNachricht: {message}",
+      "title": "Kontaktformular-Einreichung",
+      "subtitle": "Von <strong>{name}</strong> unter {email}",
+      "message": "Nachricht:"
+    },
+    "NewsletterEmail": {
+      "subject": "Newsletter-Abonnement",
+      "text": "Danke, dass du unseren Newsletter abonniert hast!",
+      "title": "Danke für dein Abonnement!",
+      "content": "Wir freuen uns, dich an Bord zu haben. Du erhältst Updates zu unseren neuesten Nachrichten, Artikeln und Sonderangeboten direkt in dein Postfach. Bleib dran!",
+      "footer": "Bitte kontaktiere uns, wenn du Fragen hast. (Wenn du auf diese E-Mail antwortest, können wir sie nicht sehen.)"
+    },
     "title": "Lass uns über dein Projekt sprechen",
     "submitting": "Senden...",
     "submit": "Senden",
@@ -72,6 +75,17 @@
     },
     "ThemeToggle": {
       "tooltip": "Thema wechseln"
+    },
+    "Newsletter": {
+      "error": "Etwas ist schief gelaufen. Bitte versuche es erneut.",
+      "success": "Danke für deine Anmeldung!",
+      "privacy_link": "Datenschutzrichtlinie",
+      "privacy_text": "Wir kümmern uns um deine Daten. Lies unsere ",
+      "is_submitting": "Senden...",
+      "submit": "Abonnieren",
+      "title": "Abonniere den Newsletter",
+      "description": "Erhalte die neuesten Updates zu meiner Arbeit und meinen Projekten",
+      "email_placeholder": "beispiel@email.com"
     }
   }
 }

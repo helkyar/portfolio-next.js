@@ -11,17 +11,6 @@
     "Projects": {
       "title": "Recent Projects",
       "link": "View all projects"
-    },
-    "Newsletter": {
-      "error": "Something went wrong. Please try again.",
-      "success": "Thanks for subscribing!",
-      "privacy_link": "privacy policy",
-      "privacy_text": "We care about your data. Read our ",
-      "is_submitting": "Submitting...",
-      "submit": "Subscribe",
-      "title": "Subscribe to the newsletter",
-      "description": "Get the latest updates on my work and projects",
-      "email_placeholder": "example@email.com"
     }
   },
   "NotFound": {
@@ -55,6 +44,20 @@
     }
   },
   "ContactPage": {
+    "ContactEmail": {
+      "subject": "New message from the contact form",
+      "text": "`Name: {name}\nEmail: {email}\nMessage: {message}",
+      "title": "Contact form submission",
+      "subtitle": "From <strong>{name}</strong> at {email}",
+      "message": "Message:"
+    },
+    "NewsletterEmail": {
+      "subject": "Newsletter subscription",
+      "text": "Thank you for subscribing to our newsletter!",
+      "title": "Thank you for subscribing!",
+      "content": " We&apos;re excited to have you on board. You&apos;ll receive updates on our latest news, articles, and special offers directly to your inbox. Stay tuned!",
+      "footer": " Please contact us if you have any questions. (If you reply to this email, we won&apos;t be able to see it.)"
+    },
     "title": "Let's talk about your project",
     "submitting": "Submitting...",
     "submit": "Submit",
@@ -64,15 +67,7 @@
     "message_placeholder": "Message",
     "name_placeholder": "Name",
     "error": "Something went wrong. Please try again.",
-    "success": "Thanks for contacting me!",
-    "ContactEmail": {
-      "subject": "New message from the contact form",
-      "text": "`Name: {name}\nEmail: {email}\nMessage: {message}"
-    },
-    "NewsletterEmail": {
-      "subject": "Newsletter subscription",
-      "text": "Thank you for subscribing to our newsletter!"
-    }
+    "success": "Thanks for contacting me!"
   },
   "Components": {
     "SearchBar": {
@@ -80,6 +75,17 @@
     },
     "ThemeToggle": {
       "tooltip": "toggle theme"
+    },
+    "Newsletter": {
+      "error": "Something went wrong. Please try again.",
+      "success": "Thanks for subscribing!",
+      "privacy_link": "privacy policy",
+      "privacy_text": "We care about your data. Read our ",
+      "is_submitting": "Submitting...",
+      "submit": "Subscribe",
+      "title": "Subscribe to the newsletter",
+      "description": "Get the latest updates on my work and projects",
+      "email_placeholder": "example@email.com"
     }
   }
 }
