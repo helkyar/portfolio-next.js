@@ -26,7 +26,10 @@ export default function NewsletterForm() {
   })
 
   const processForm: SubmitHandler<Inputs> = async (data) => {
-    const result = await subscribe(data)
+    const result = await subscribe(data).catch((error) => ({
+      error,
+    }))
+
     if (result?.error) {
       toast.error(t('error'))
       return
@@ -48,19 +51,21 @@ export default function NewsletterForm() {
             className='flex flex-col items-start gap-3'
           >
             <div className='flex w-full flex-col items-start gap-3 sm:flex-row'>
-              <Input
-                type='email'
-                id='email'
-                autoComplete='email'
-                placeholder={t('email_placeholder')}
-                className='w-full'
-                {...register('email')}
-              />
-              {errors.email?.message && (
-                <p className='ml-1 mt-2 text-sm text-rose-400'>
-                  {errors.email.message}
-                </p>
-              )}
+              <div className='flex w-full flex-col'>
+                <Input
+                  type='email'
+                  id='email'
+                  autoComplete='email'
+                  placeholder={t('email_placeholder')}
+                  className='w-full'
+                  {...register('email')}
+                />
+                {errors.email?.message && (
+                  <p className='ml-1 mt-2 text-sm text-rose-400'>
+                    {errors.email.message}
+                  </p>
+                )}
+              </div>
               <Button
                 type='submit'
                 disabled={isSubmitting}

@@ -1,6 +1,6 @@
 import DetailPage, { DetailContent } from '@/components/detail-page'
 import { getFileContent } from '@/lib/file-parser'
-import { getPosts, getPostsBySlug } from '@/features/posts/lib/get-posts'
+import { getPosts, postDirectory } from '@/features/posts/lib/get-posts'
 import { getLocale } from 'next-intl/server'
 import { Suspense } from 'react'
 import { DetailWithImageSkeleton } from '@/components/ui/skeletons'
@@ -27,7 +27,7 @@ export default async function PostDetailPage({ params }: PropTypes) {
 
 async function FetchPostsDetail({ params }: PropTypes) {
   const locale = await getLocale()
-  const content = await getFileContent(params, getPostsBySlug(locale))
+  const content = await getFileContent(params, postDirectory, locale)
 
   return <DetailContent {...content} />
 }

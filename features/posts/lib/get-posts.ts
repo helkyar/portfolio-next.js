@@ -1,18 +1,13 @@
 import path from 'path'
 
-import { FileMetadata as PostMetadata, File as Post } from '@/data/types'
-import { getFiles, getFilesBySlug } from '@/lib/file-parser'
+import { FileMetadata as PostMetadata } from '@/data/types'
+import { getFiles } from '@/lib/file-parser'
 import { LOCALE_DEFAULT } from '@/data/constants'
 
-async function getRootDirectory(locale: string = LOCALE_DEFAULT) {
-  return path.join(process.cwd(), 'features/posts/content', locale)
-}
+export const postDirectory = 'features/posts/content'
 
-export function getPostsBySlug(locale: string) {
-  return async (slug: string): Promise<Post | null> => {
-    const rootDirectory = await getRootDirectory(locale)
-    return getFilesBySlug(slug, rootDirectory)
-  }
+async function getRootDirectory(locale: string = LOCALE_DEFAULT) {
+  return path.join(process.cwd(), postDirectory, locale)
 }
 
 type Params = {

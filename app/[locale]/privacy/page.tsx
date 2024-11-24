@@ -1,12 +1,10 @@
 import DetailPage, { DetailContent } from '@/components/detail-page'
 import { getFileContent } from '@/lib/file-parser'
-import {
-  getPrivacyBySlug,
-  getPrivacyPolicy,
-} from '@/features/contact/lib/privacy'
+import { getPrivacyPolicy } from '@/features/contact/lib/get-privacy'
 import { getLocale } from 'next-intl/server'
 import { Suspense } from 'react'
 import { DetailSkeleton } from '@/components/ui/skeletons'
+import { privacyDirectory } from '@/features/contact/lib/get-privacy'
 
 export async function generateStaticParams() {
   const policies = await getPrivacyPolicy()
@@ -27,7 +25,7 @@ export default async function PrivacyDetailPage() {
 async function FetchPrivacyDetail() {
   const params = { slug: 'privacy' }
   const locale = await getLocale()
-  const content = await getFileContent(params, getPrivacyBySlug(locale))
+  const content = await getFileContent(params, privacyDirectory, locale)
 
   return <DetailContent {...content} />
 }

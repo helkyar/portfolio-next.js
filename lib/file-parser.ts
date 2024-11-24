@@ -3,6 +3,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import { notFound } from 'next/navigation'
 import { File, FileContent, FileMetadata } from '@/data/types'
+import { LOCALE_DEFAULT } from '@/data/constants'
 
 const encoding = 'utf8'
 export async function getFilesBySlug(
@@ -46,12 +47,18 @@ export function getFileMetadata(
   return { ...data, slug }
 }
 
+async function getRootDirectory(directory: string, locale = LOCALE_DEFAULT) {
+  return path.join(process.cwd(), directory, locale)
+}
+
 export async function getFileContent(
   params: { slug: string },
-  searchBySlug: (slug: string) => Promise<File | null>,
+  directory: string,
+  locale: string,
 ): Promise<FileContent> {
   const { slug } = params
-  const project = await searchBySlug(slug)
+  const rootDirectory = await getRootDirectory(directory, locale)
+  const project = await getFilesBySlug(slug, rootDirectory)
 
   if (!project) {
     notFound()
