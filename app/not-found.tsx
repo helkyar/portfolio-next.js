@@ -1,9 +1,9 @@
 import { Link } from '@/i18n/routing'
-import { useTranslation } from '@/lib/translations'
+import { getTranslation } from '@/lib/translations'
 import { ArrowLeftIcon } from '@radix-ui/react-icons'
 
-export default function NotFound() {
-  const { t } = useTranslation('NotFound')
+export default async function NotFound() {
+  const { t } = await getTranslation('NotFound')
   return (
     <section className='pb-24 pt-40'>
       <div className='sm:py-s4 min-h-full px-4 sm:px-6 md:grid md:place-items-center lg:px-8'>
@@ -21,10 +21,10 @@ export default function NotFound() {
                   {t('description')}
                 </p>
               </div>
-              <div className='mt-10 bg-muted text-base text-muted-foreground hover:bg-accent'>
+              <div className='mt-10 text-base'>
                 <Link
                   href='/'
-                  className='inline-flex items-center gap-3 text-muted-foreground hover:text-foreground'
+                  className='inline-flex items-center gap-3 rounded-lg bg-muted py-2 pl-2 pr-4 text-muted-foreground hover:bg-accent hover:text-foreground'
                 >
                   <ArrowLeftIcon className='h-5 w-5' />
                   <span>{t('home')}</span>
