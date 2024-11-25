@@ -12,7 +12,7 @@ import RecentPosts from '@/features/posts/components/recent-posts'
 import RecentProjects from '@/features/projects/components/recent-projects'
 import { Suspense } from 'react'
 
-export default function Home() {
+export default async function Home() {
   return (
     <section className='section py-24'>
       <div className='max-w-3x2 container mx-auto flex flex-col gap-y-20'>

@@ -19,5 +19,5 @@ export type FileContent = {
   readonly image: string | undefined
   readonly publishedAt: string | undefined
   readonly author: string | undefined
-  readonly no_ratio: string | undefined
+  readonly noRatio: string | undefined
 }
