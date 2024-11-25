@@ -1,8 +1,8 @@
 import { HTMLAttributes } from 'react'
 import { highlight } from 'sugar-high'
-import { MDXRemote, MDXRemoteProps } from 'next-mdx-remote/rsc'
 
 import Counter from '@/components/counter'
+import { MDXRemote, MDXRemoteProps } from 'next-mdx-remote/rsc'
 
 type PropTypes = Readonly<HTMLAttributes<HTMLElement>>
 
@@ -41,9 +41,7 @@ const components = {
   Counter,
 }
 
-export default function MDXContent(
-  props: JSX.IntrinsicAttributes & MDXRemoteProps,
-) {
+export default function MDXContent(props: MDXRemoteProps) {
   return (
     <MDXRemote
       {...props}

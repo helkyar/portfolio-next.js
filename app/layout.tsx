@@ -3,7 +3,7 @@ import { Inter, Playfair_Display } from 'next/font/google'
 import { cn } from '@/lib/utils'
 import './globals.css'
 
-import { getMessages, setRequestLocale } from 'next-intl/server'
+import { getMessages } from 'next-intl/server'
 import { Locale } from '@/data/constants'
 import Providers from '@/components/providers'
 import { NextIntlClientProvider } from 'next-intl'
@@ -26,7 +26,7 @@ type PropTypes = {
 
 export default async function RootLayout({ children, params }: PropTypes) {
   const { locale } = await params
-  setRequestLocale(locale)
+
   const messages = await getMessages()
   return (
     <html lang={locale} suppressHydrationWarning>

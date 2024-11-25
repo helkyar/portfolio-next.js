@@ -1,24 +1,32 @@
-import DetailPage, { DetailContent } from '@/components/detail-page'
+import DetailPage from '@/components/detail-page'
 import { getFileContent } from '@/lib/file-parser'
 import { privacyDirectory } from '@/features/contact/lib/get-privacy'
-import { getLocale } from 'next-intl/server'
 import { Suspense } from 'react'
 import { DetailSkeleton } from '@/components/ui/skeletons'
+import { LOCALE } from '@/data/constants'
+import { DetailContent } from '@/components/detail-content'
 
-export default async function PrivacyDetailPage() {
+export async function generateStaticParams() {
+  const locale = Object.keys(LOCALE).map((locale) => ({ params: { locale } }))
+  return locale
+}
+
+type PropTypes = { readonly params: Promise<{ locale: string }> }
+export default async function PrivacyDetailPage({ params }: PropTypes) {
+  const { locale } = await params
   return (
     <DetailPage path='/contact'>
       <Suspense fallback={<DetailSkeleton />}>
-        <FetchPrivacyDetail />
+        <FetchPrivacyDetail locale={locale} />
       </Suspense>
     </DetailPage>
   )
 }
 
-async function FetchPrivacyDetail() {
-  const params = { slug: 'privacy' }
-  const locale = await getLocale()
-  const content = await getFileContent(params, privacyDirectory, locale)
+type FetchTypes = { readonly locale: string }
+async function FetchPrivacyDetail({ locale }: FetchTypes) {
+  const slug = 'privacy'
+  const content = await getFileContent(slug, privacyDirectory, locale)
 
   return <DetailContent {...content} />
 }

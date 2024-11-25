@@ -52,11 +52,10 @@ async function getRootDirectory(directory: string, locale = LOCALE_DEFAULT) {
 }
 
 export async function getFileContent(
-  params: { slug: string },
+  slug: string,
   directory: string,
   locale: string,
 ): Promise<FileContent> {
-  const { slug } = params
   const rootDirectory = await getRootDirectory(directory, locale)
   const project = await getFilesBySlug(slug, rootDirectory)
 
@@ -73,6 +72,6 @@ export async function getFileContent(
     image,
     author,
     publishedAt,
-    no_ratio,
+    noRatio: no_ratio,
   }
 }
