@@ -76,6 +76,9 @@
     "ThemeToggle": {
       "tooltip": "toggle theme"
     },
+    "LanguageToggle": {
+      "tooltip": "change language"
+    },
     "Newsletter": {
       "error": "Something went wrong. Please try again.",
       "success": "Thanks for subscribing!",

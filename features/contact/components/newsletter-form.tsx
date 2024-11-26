@@ -13,6 +13,8 @@ import { useTranslation } from '@/lib/translations'
 
 type Inputs = schema.infer<typeof NewsletterFormSchema>
 export default function NewsletterForm() {
+  if (!process.env.NEXT_PUBLIC_SHOW_NEWSLETTER) return null
+
   const { t } = useTranslation('Components.Newsletter')
 
   const {

@@ -5,6 +5,7 @@ import { Suspense } from 'react'
 import { DetailSkeleton } from '@/components/ui/skeletons'
 import { LOCALE } from '@/data/constants'
 import { DetailContent } from '@/components/detail-content'
+import { notFound } from 'next/navigation'
 
 export async function generateStaticParams() {
   const locale = Object.keys(LOCALE).map((locale) => ({ params: { locale } }))
@@ -13,6 +14,10 @@ export async function generateStaticParams() {
 
 type PropTypes = { readonly params: Promise<{ locale: string }> }
 export default async function PrivacyDetailPage({ params }: PropTypes) {
+  if (!process.env.SHOW_PRIVACY && !process.env.NEXT_PUBLIC_SHOW_NEWSLETTER) {
+    notFound()
+  }
+
   const { locale } = await params
   return (
     <DetailPage path='/contact'>

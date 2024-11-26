@@ -2,6 +2,7 @@
 import { Button } from '@/components/ui'
 import { LOCALE, Locale } from '@/data/constants'
 import { useOnClickOutside } from '@/lib/on-click-outside'
+import { useTranslation } from '@/lib/translations'
 import { cn } from '@/lib/utils'
 import { GlobeIcon } from '@radix-ui/react-icons'
 import Link from 'next/link'
@@ -11,6 +12,7 @@ import { useRef, useState } from 'react'
 type PropTypes = { readonly locale: Locale }
 
 export default function LanguageToggle({ locale }: PropTypes) {
+  const { t } = useTranslation('Components.LanguageToggle')
   const [openSelect, setOpenSelect] = useState(false)
 
   return (
@@ -21,6 +23,7 @@ export default function LanguageToggle({ locale }: PropTypes) {
         onClick={() => setOpenSelect((o) => !o)}
       >
         <GlobeIcon className='size-4 text-foreground' />
+        <span className='sr-only'>{t('tooltip')}</span>
       </Button>
       {openSelect && (
         <LanguageLinks locale={locale} onClose={() => setOpenSelect(false)} />

@@ -10,6 +10,7 @@ type PropTypes = {
 
 export default async function Header({ locale }: PropTypes) {
   const { t } = await getTranslation('LayoutPage.Header')
+  const hasContact = process.env.SHOW_CONTACT
   return (
     <header className='fixed inset-x-0 top-0 z-50 bg-background/75 py-6 backdrop-blur-sm'>
       <nav className='max-w-3x1 container mx-auto flex w-full items-center justify-around'>
@@ -25,9 +26,11 @@ export default async function Header({ locale }: PropTypes) {
           <li className='transition-colors hover:text-foreground'>
             <Link href='/projects'>{t('projects')}</Link>
           </li>
-          <li className='transition-colors hover:text-foreground'>
-            <Link href='/contact'>{t('contact')}</Link>
-          </li>
+          {hasContact && (
+            <li className='transition-colors hover:text-foreground'>
+              <Link href='/contact'>{t('contact')}</Link>
+            </li>
+          )}
         </ul>
         <div>
           <LanguageToggle locale={locale} />

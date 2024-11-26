@@ -74,6 +74,9 @@
     "ThemeToggle": {
       "tooltip": "cambiar tema"
     },
+    "LanguageToggle": {
+      "tooltip": "cambiar idioma"
+    },
     "Newsletter": {
       "error": "Algo salió mal. Por favor, inténtalo de nuevo.",
       "success": "¡Gracias por suscribirte!",

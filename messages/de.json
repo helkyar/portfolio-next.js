@@ -76,6 +76,9 @@
     "ThemeToggle": {
       "tooltip": "Thema wechseln"
     },
+    "LanguageToggle": {
+      "tooltip": "Sprache wechseln"
+    },
     "Newsletter": {
       "error": "Etwas ist schief gelaufen. Bitte versuche es erneut.",
       "success": "Danke für deine Anmeldung!",
