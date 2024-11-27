@@ -42,7 +42,7 @@ function LanguageLinks({ locale, onClose }: LinksPropTypes) {
     <div
       ref={ref}
       id='language-selector'
-      className='shadow-box absolute z-10 flex w-36 flex-col rounded-lg border-[1px] bg-background'
+      className='shadow-box absolute right-1/2 z-10 flex w-36 flex-col rounded-lg border-[1px] bg-background'
     >
       {Object.keys(LOCALE).map((lng) => (
         <LanguageLink key={lng} locale={locale} language={lng as Locale} />

@@ -14,8 +14,7 @@ const ContactFormEmail: React.FC<Readonly<ContactFormEmailProps>> = ({
   subtitle,
 }) => {
   return (
-    <Container>
-      <h1 style={mainTitle}>{title}</h1>
+    <Container title={title}>
       <p>{subtitle}</p>
       <h2 style={styledMessage}>{messageTitle}</h2>
       <p style={paragraph}>{message}</p>
@@ -27,7 +26,7 @@ export default ContactFormEmail
 
 const mainTitle = {
   fontSize: '32px',
-  lineHeight: '1.3rem',
+  lineHeight: '1.3',
   margin: '16px 0',
   fontWeight: '700',
   color: '#484848',

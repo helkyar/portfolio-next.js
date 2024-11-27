@@ -32,7 +32,7 @@ export default async function Header({ locale }: PropTypes) {
             </li>
           )}
         </ul>
-        <div>
+        <div className='relative'>
           <LanguageToggle locale={locale} />
           <ThemeToggle />
         </div>
