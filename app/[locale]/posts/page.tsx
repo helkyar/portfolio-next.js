@@ -1,9 +1,10 @@
 import { MainContainer } from '@/components/main-container'
 import { SearchBarParams } from '@/components/prams-search-bar'
 import { PostsListSkeleton } from '@/components/ui/skeletons'
-import { PostsWithFilter } from '@/features/posts/components/posts-with-filter'
+import Posts from '@/features/posts/components/posts'
 import { getPosts } from '@/features/posts/lib/get-posts'
 import { getTranslation } from '@/lib/translations'
+import { filteredMetadata } from '@/lib/utils'
 import { getLocale } from 'next-intl/server'
 import { Suspense } from 'react'
 
@@ -34,6 +35,7 @@ type Query = { readonly query: string }
 async function FetchPostsWithSearchParams({ query }: Query) {
   const locale = await getLocale()
   const posts = await getPosts({ locale })
+  const filteredPosts = filteredMetadata(posts, query)
 
-  return <PostsWithFilter posts={posts} query={query} />
+  return <Posts posts={filteredPosts} />
 }

@@ -26,3 +26,20 @@ export function formatDate(date: string, locale: string) {
     day: 'numeric',
   })
 }
+
+export function normalize(str: string) {
+  return str
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+}
+
+export function filteredMetadata<
+  T extends { title?: string; summary?: string },
+>(items: T[], query: string) {
+  return items.filter(
+    (item) =>
+      normalize(item.title ?? '').includes(normalize(query)) ||
+      normalize(item.summary ?? '').includes(normalize(query)),
+  )
+}

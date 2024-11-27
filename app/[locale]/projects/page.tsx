@@ -1,9 +1,10 @@
 import { MainContainer } from '@/components/main-container'
 import { SearchBarParams } from '@/components/prams-search-bar'
 import { ProjectsListSkeleton } from '@/components/ui/skeletons'
-import { ProjectsWithFilter } from '@/features/projects/components/projects-with-filter'
+import Projects from '@/features/projects/components/projects'
 import { getProjects } from '@/features/projects/lib/get-projects'
 import { getTranslation } from '@/lib/translations'
+import { filteredMetadata } from '@/lib/utils'
 import { getLocale } from 'next-intl/server'
 import { Suspense } from 'react'
 
@@ -32,7 +33,8 @@ export default async function ProjectsPage(props: PropTypes) {
 type Query = { readonly query: string }
 async function FetchPostsWithSearchParams({ query }: Query) {
   const locale = await getLocale()
-  const posts = await getProjects({ locale })
+  const projects = await getProjects({ locale })
+  const filteredProjects = filteredMetadata(projects, query)
 
-  return <ProjectsWithFilter projects={posts} query={query} />
+  return <Projects projects={filteredProjects} />
 }

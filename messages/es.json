@@ -69,7 +69,7 @@
   },
   "Components": {
     "SearchBar": {
-      "reset": "Restablecer"
+      "reset": "Borrar"
     },
     "ThemeToggle": {
       "tooltip": "cambiar tema"
