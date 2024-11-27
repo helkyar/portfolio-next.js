@@ -48,7 +48,7 @@
       "subject": "Nouveau message du formulaire de contact",
       "text": "`Nom: {name}\nEmail: {email}\nMessage: {message}",
       "title": "Soumission du formulaire de contact",
-      "subtitle": "De <strong>{name}</strong> à {email}",
+      "subtitle": "De {name} à {email}",
       "message": "Message:"
     },
     "NewsletterEmail": {

@@ -48,7 +48,7 @@
       "subject": "Nuevo mensaje del formulario de contacto",
       "text": "`Nombre: {name}\nCorreo electrónico: {email}\nMensaje: {message}",
       "title": "Envío del formulario de contacto",
-      "subtitle": "De <strong>{name}</strong> en {email}",
+      "subtitle": "De {name} en {email}",
       "message": "Mensaje:"
     },
     "NewsletterEmail": {
@@ -65,7 +65,9 @@
     "privacy_link": "política de privacidad",
     "email_placeholder": "Correo electrónico",
     "message_placeholder": "Mensaje",
-    "name_placeholder": "Nombre"
+    "name_placeholder": "Nombre",
+    "error": "Algo salió mal. Por favor, inténtalo de nuevo.",
+    "success": "¡Mensaje enviado!"
   },
   "Components": {
     "SearchBar": {

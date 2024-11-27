@@ -22,14 +22,20 @@ export async function sendEmail(data: ContactFormInputs) {
   try {
     const { resend, personalEmail } = getResent()
     const { name, email, message } = result.data
+
+    const title = t('title')
+    const subtitle = t('subtitle', { name, email })
+    const messageTitle = t('message')
+
     const { data, error } = await resend.emails.send({
       from: personalEmail,
       to: [email],
       cc: [personalEmail],
       subject: t('subject'),
       text: t('text', { name, email, message }),
-      react: ContactFormEmail({ name, email, message }),
+      react: ContactFormEmail({ title, subtitle, messageTitle, message }),
     })
+
     if (!data || error) throw new Error('Failed to send email')
     return { success: true }
   } catch (error) {
@@ -51,13 +57,18 @@ export async function subscribe(data: NewsletterFormInputs) {
       email,
       audienceId: process.env.RESEND_AUDIENCE_ID as string,
     })
+
+    const title = t('title')
+    const content = t('content')
+    const footer = t('footer')
+
     const { data: sendData, error: sendError } = await resend.emails.send({
       from: personalEmail,
       to: [email],
       cc: [personalEmail],
       subject: t('subject'),
       text: t('text'),
-      react: NewsletterWelcomeEmail(),
+      react: NewsletterWelcomeEmail({ title, content, footer }),
     })
     const hasFailed = !sendData || sendError || !data || error
     if (hasFailed) throw new Error('Failed to subscribe')

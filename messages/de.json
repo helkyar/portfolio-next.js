@@ -48,7 +48,7 @@
       "subject": "Neue Nachricht vom Kontaktformular",
       "text": "`Name: {name}\nE-Mail: {email}\nNachricht: {message}",
       "title": "Kontaktformular-Einreichung",
-      "subtitle": "Von <strong>{name}</strong> unter {email}",
+      "subtitle": "Von {name} unter {email}",
       "message": "Nachricht:"
     },
     "NewsletterEmail": {

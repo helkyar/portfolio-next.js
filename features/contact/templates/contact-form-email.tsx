@@ -1,24 +1,47 @@
 import { Container } from '@/features/contact/templates/container'
-import { useTranslation } from '@/lib/translations'
 
 interface ContactFormEmailProps {
-  readonly name: string
-  readonly email: string
+  readonly title: string
+  readonly subtitle: string
   readonly message: string
+  readonly messageTitle: string
 }
 
-export default function ContactFormEmail({
-  name,
-  email,
+const ContactFormEmail: React.FC<Readonly<ContactFormEmailProps>> = ({
+  title,
   message,
-}: ContactFormEmailProps) {
-  const { t } = useTranslation('ContactPage.ContactEmail')
+  messageTitle,
+  subtitle,
+}) => {
   return (
     <Container>
-      <h1>{t('title')}</h1>
-      <p>{t('subtitle', { name, email })}</p>
-      <h2>{t('message')}</h2>
-      <p>{message}</p>
+      <h1 style={mainTitle}>{title}</h1>
+      <p>{subtitle}</p>
+      <h2 style={styledMessage}>{messageTitle}</h2>
+      <p style={paragraph}>{message}</p>
     </Container>
   )
 }
+
+export default ContactFormEmail
+
+const mainTitle = {
+  fontSize: '32px',
+  lineHeight: '1.3rem',
+  margin: '16px 0',
+  fontWeight: '700',
+  color: '#484848',
+}
+const styledMessage = {
+  ...mainTitle,
+  fontSize: '24px',
+}
+const paragraph = {
+  fontSize: '18px',
+  lineHeight: '1.4rem',
+  margin: '16px 0',
+  color: '#484848',
+  padding: '24px',
+  backgroundColor: '#f2f3f3',
+  borderRadius: '4px',
+} as React.CSSProperties
