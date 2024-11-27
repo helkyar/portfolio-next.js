@@ -20,7 +20,7 @@ export async function sendEmail(data: ContactFormInputs) {
   }
 
   try {
-    const { resend, personalEmail } = getResent()
+    const { resend, business, personal } = getResent()
     const { name, email, message } = result.data
 
     const title = t('title')
@@ -28,9 +28,9 @@ export async function sendEmail(data: ContactFormInputs) {
     const messageTitle = t('message')
 
     const { data, error } = await resend.emails.send({
-      from: personalEmail,
+      from: business,
       to: [email],
-      cc: [personalEmail],
+      bcc: [personal],
       subject: t('subject'),
       text: t('text', { name, email, message }),
       react: ContactFormEmail({ title, subtitle, messageTitle, message }),
@@ -51,7 +51,7 @@ export async function subscribe(data: NewsletterFormInputs) {
   }
 
   try {
-    const { resend, personalEmail } = getResent()
+    const { resend, business, personal } = getResent()
     const { email } = result.data
     const { data, error } = await resend.contacts.create({
       email,
@@ -63,9 +63,9 @@ export async function subscribe(data: NewsletterFormInputs) {
     const footer = t('footer')
 
     const { data: sendData, error: sendError } = await resend.emails.send({
-      from: personalEmail,
+      from: business,
       to: [email],
-      cc: [personalEmail],
+      bcc: [personal],
       subject: t('subject'),
       text: t('text'),
       react: NewsletterWelcomeEmail({ title, content, footer }),
