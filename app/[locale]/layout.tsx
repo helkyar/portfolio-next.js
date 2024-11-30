@@ -1,15 +1,10 @@
 import { routing } from '@/i18n/routing'
 import { notFound } from 'next/navigation'
-import { LOCALE, Locale } from '@/data/constants'
+import { Locale } from '@/data/constants'
 import { NextIntlClientProvider } from 'next-intl'
 import Header from '@/features/layout/header'
 import Footer from '@/features/layout/footer'
 import { getMessages, setRequestLocale } from 'next-intl/server'
-
-export async function generateStaticParams() {
-  const locale = Object.keys(LOCALE).map((locale) => ({ locale }))
-  return locale
-}
 
 type PropTypes = {
   readonly children: React.ReactNode
