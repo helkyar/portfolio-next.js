@@ -1,11 +1,9 @@
-import { RecentPostsSkeleton } from '@/components/ui/skeletons'
 import { DEFAULT_POSTS_PREVIEW } from '@/data/constants'
 import Posts from '@/features/posts/components/posts'
 import { getPosts } from '@/features/posts/lib/get-posts'
 import { Link } from '@/i18n/routing'
 import { getTranslation } from '@/lib/translations'
 import { getLocale } from 'next-intl/server'
-import { Suspense } from 'react'
 
 export async function generateStaticParams() {
   const posts = await getPosts({ limit: DEFAULT_POSTS_PREVIEW })

@@ -14,7 +14,8 @@ export async function generateStaticParams() {
   const projects = await getProjects()
   const slugs = projects.flatMap((project) =>
     Object.keys(LOCALE).map((locale) => ({
-      params: { slug: project.slug, locale },
+      slug: project.slug,
+      locale,
     })),
   )
 

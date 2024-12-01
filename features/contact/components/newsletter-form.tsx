@@ -13,8 +13,6 @@ import { useTranslation } from '@/lib/translations'
 
 type Inputs = schema.infer<typeof NewsletterFormSchema>
 export default function NewsletterForm() {
-  if (!process.env.NEXT_PUBLIC_SHOW_NEWSLETTER) return null
-
   const { t } = useTranslation('Components.Newsletter')
 
   const {
@@ -26,6 +24,8 @@ export default function NewsletterForm() {
     resolver: resolver(NewsletterFormSchema),
     defaultValues: { email: '' },
   })
+
+  if (!process.env.NEXT_PUBLIC_SHOW_NEWSLETTER) return null
 
   const processForm: SubmitHandler<Inputs> = async (data) => {
     const result = await subscribe(data).catch((error) => ({
@@ -56,7 +56,7 @@ export default function NewsletterForm() {
               <div className='flex w-full flex-col'>
                 <Input
                   type='email'
-                  id='email'
+                  id='newsletter-email'
                   autoComplete='email'
                   placeholder={t('email_placeholder')}
                   className='w-full'
