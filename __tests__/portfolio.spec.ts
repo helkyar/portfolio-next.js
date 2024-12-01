@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test'
 
 test.beforeEach(async ({ page }) => {
-  await page.goto('http://localhost:3000/')
+  await page.goto('http://localhost:3000/en')
 })
 
 test.describe('Landing', () => {
@@ -30,15 +30,11 @@ test.describe('Landing', () => {
     ).toBeVisible()
   })
   test('test navigation', async ({ page }) => {
-    await page.getByRole('button', { name: 'cambiar idioma' }).click()
-    await page.getByRole('link', { name: 'english' }).click()
     await expect(
       page.getByRole('heading', { name: "Hey, I'm Javi" }),
     ).toBeVisible()
     await page.getByRole('link', { name: 'Posts', exact: true }).click()
     await expect(page.getByRole('heading', { name: 'Posts' })).toBeVisible()
-    await page.getByPlaceholder('react, next,').click()
-    await page.getByPlaceholder('react, next,').fill('r')
     await page.goto('http://localhost:3000/en/posts?query=r')
     await expect(
       page.locator('div').filter({ hasText: /^Reset$/ }),
