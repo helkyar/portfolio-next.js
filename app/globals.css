@@ -31,8 +31,8 @@
     --chart-5: 27 87% 67%;
 
     --sh-identifier: #354150;
-    --sh-keyword: #f47067;
-    --sh-string: #00a99a;
+    --sh-keyword: #d75a51;
+    --sh-string: #10877d;
     --sh-class: #8d85ff;
     --sh-property: #4e8fdf;
     --sh-entity: #6eafad;
@@ -42,7 +42,7 @@
   }
 
   .dark {
-    --background: 240 10% 3.9%;
+    --background: 240 10% 5%;
     --foreground: 0 0% 98%;
     --card: 240 10% 3.9%;
     --card-foreground: 0 0% 98%;
@@ -69,8 +69,8 @@
 
     --sh-class: #4c97f8;
     --sh-identifier: white;
-    --sh-keyword: #f47067;
-    --sh-string: #0fa295;
+    --sh-keyword: #e35c52;
+    --sh-string: #1cafa3;
   }
 }
 

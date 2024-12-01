@@ -6,6 +6,8 @@ type SkeletonProps = {
   readonly limit: number
 }
 
+const range = (length: number) => Array.from({ length }).map((_, i) => i)
+
 export function PostSkeleton() {
   return (
     <div
@@ -28,7 +30,7 @@ export function RecentPostsSkeleton({ limit }: SkeletonProps) {
         className={`${shimmer} relative h-10 w-96 overflow-hidden rounded-lg bg-muted`}
       ></div>
 
-      {[...Array(limit)].map((i) => (
+      {range(limit).map((i) => (
         <PostSkeleton key={i} />
       ))}
 
@@ -43,7 +45,7 @@ export function PostsListSkeleton({ limit }: SkeletonProps) {
   return (
     <div>
       <div className='flex flex-col gap-5'>
-        {[...Array(limit)].map((i) => (
+        {range(limit).map((i) => (
           <PostSkeleton key={i} />
         ))}
       </div>
@@ -79,7 +81,7 @@ export function RecentProjectsSkeleton({ limit }: SkeletonProps) {
       <div
         className={`grid grid-cols-1 gap-8 sm:flex sm:min-w-[400px] sm:flex-wrap`}
       >
-        {[...Array(limit)].map((i) => (
+        {range(limit).map((i) => (
           <ProjectSkeleton key={i} />
         ))}
       </div>
@@ -94,7 +96,7 @@ export function ProjectsListSkeleton({ limit }: SkeletonProps) {
   return (
     <div>
       <div className='grid grid-cols-1 gap-8 sm:flex sm:min-w-[400px] sm:flex-wrap'>
-        {[...Array(limit)].map((i) => (
+        {range(limit).map((i) => (
           <ProjectSkeleton key={i} />
         ))}
       </div>
@@ -114,7 +116,7 @@ export function DetailSkeleton() {
         <p className='mt-3 h-3 rounded-lg bg-muted'></p>
       </header>
       <main className='prose dark:prose-invert mt-3'>
-        {[...Array(2)].map((i) => (
+        {range(2).map((i) => (
           <div
             key={i}
             className={`${shimmer} g-2 relative my-2 flex flex-col overflow-hidden rounded-lg bg-accent p-4`}

@@ -6,6 +6,8 @@ import Header from '@/features/layout/header'
 import Footer from '@/features/layout/footer'
 import { getMessages, setRequestLocale } from 'next-intl/server'
 
+export const dynamicParams = false
+
 export async function generateStaticParams() {
   const locale = Object.keys(LOCALE).map((locale) => ({ locale }))
   return locale

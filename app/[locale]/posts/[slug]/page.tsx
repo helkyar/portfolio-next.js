@@ -11,7 +11,8 @@ export async function generateStaticParams() {
   const posts = await getPosts()
   const paths = posts.flatMap((post) =>
     Object.keys(LOCALE).map((locale) => ({
-      params: { slug: post.slug, locale },
+      slug: post.slug,
+      locale,
     })),
   )
 

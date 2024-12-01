@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils'
 import './globals.css'
 
 import { getMessages } from 'next-intl/server'
-import { Locale } from '@/data/constants'
+import { Locale, LOCALE_DEFAULT } from '@/data/constants'
 import Providers from '@/components/providers'
 import { NextIntlClientProvider } from 'next-intl'
 
@@ -29,7 +29,7 @@ export default async function RootLayout({ children, params }: PropTypes) {
 
   const messages = await getMessages()
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang={locale ?? LOCALE_DEFAULT} suppressHydrationWarning>
       <body
         className={cn(
           'flex min-h-screen flex-col items-center font-sans antialiased',
