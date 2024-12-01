@@ -26,7 +26,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# local env files
+# env files
 .env*.local
 .env
 
@@ -35,4 +35,10 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
+next-env.d.tsç
+
+## playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
