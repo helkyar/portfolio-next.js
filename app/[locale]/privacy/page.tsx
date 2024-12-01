@@ -3,14 +3,8 @@ import { getFileContent } from '@/lib/file-parser'
 import { privacyDirectory } from '@/features/contact/lib/get-privacy'
 import { Suspense } from 'react'
 import { DetailSkeleton } from '@/components/ui/skeletons'
-import { LOCALE } from '@/data/constants'
 import { DetailContent } from '@/components/detail-content'
 import { notFound } from 'next/navigation'
-
-export async function generateStaticParams() {
-  const locale = Object.keys(LOCALE).map((locale) => ({ params: { locale } }))
-  return locale
-}
 
 type PropTypes = { readonly params: Promise<{ locale: string }> }
 export default async function PrivacyDetailPage({ params }: PropTypes) {
