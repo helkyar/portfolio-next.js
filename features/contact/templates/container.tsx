@@ -1,9 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 type PropTypes = { readonly children: React.ReactNode; readonly title: string }
 
-const baseUrl = process.env.VERCEL_URL
-  ? process.env.VERCEL_URL
-  : 'http://localhost:3000/'
+const baseUrl = 'https://helkyar-portfolio-nextjs.vercel.app/'
 
 const imgUrl =
   '_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fjavi.e733a3de.jpeg&w=256&q=75'
