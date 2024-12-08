@@ -52,9 +52,3 @@ for more details.
 ## Next Steps
 
 - Update projects list with READMEs of github repos
-- Apply an appropriate architecture/design pattern to facilitate extensibility
-  and readability
-- Tests
-- Functional contact form with database
-- Support for multi-language
-- Better control of navigation with props and conditional render
