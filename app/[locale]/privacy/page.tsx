@@ -5,12 +5,11 @@ import { Suspense } from 'react'
 import { DetailSkeleton } from '@/components/ui/skeletons'
 import { DetailContent } from '@/components/detail-content'
 import { notFound } from 'next/navigation'
+import { envConfig } from '@/lib/env-config'
 
 type PropTypes = { readonly params: Promise<{ locale: string }> }
 export default async function PrivacyDetailPage({ params }: PropTypes) {
-  if (!process.env.SHOW_PRIVACY && !process.env.NEXT_PUBLIC_SHOW_NEWSLETTER) {
-    notFound()
-  }
+  if (!envConfig.showPrivacy) notFound()
 
   const { locale } = await params
   return (

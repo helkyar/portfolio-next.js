@@ -8,6 +8,7 @@ import ContactFormEmail from '@/features/contact/templates/contact-form-email'
 import NewsletterWelcomeEmail from '@/features/contact/templates/newsletter-form-email'
 import { getTranslation } from '@/lib/translations'
 import { getResent } from '@/features/contact/lib/get-resend'
+import { envConfig } from '@/lib/env-config'
 
 type ContactFormInputs = schema.infer<typeof ContactFormSchema>
 type NewsletterFormInputs = schema.infer<typeof NewsletterFormSchema>
@@ -55,7 +56,7 @@ export async function subscribe(data: NewsletterFormInputs) {
     const { email } = result.data
     const { data, error } = await resend.contacts.create({
       email,
-      audienceId: process.env.RESEND_AUDIENCE_ID as string,
+      audienceId: envConfig.resendAudienceId,
     })
 
     const title = t('title')

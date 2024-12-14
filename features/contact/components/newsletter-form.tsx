@@ -10,6 +10,7 @@ import { Input } from '@/components/ui/input'
 import { Card, CardContent } from '@/components/ui/card'
 import { Link } from '@/i18n/routing'
 import { useTranslation } from '@/lib/translations'
+import { envConfig } from '@/lib/env-config'
 
 type Inputs = schema.infer<typeof NewsletterFormSchema>
 export default function NewsletterForm() {
@@ -25,7 +26,7 @@ export default function NewsletterForm() {
     defaultValues: { email: '' },
   })
 
-  if (!process.env.NEXT_PUBLIC_SHOW_NEWSLETTER) return null
+  if (!envConfig.showNewsletter) return null
 
   const processForm: SubmitHandler<Inputs> = async (data) => {
     const result = await subscribe(data).catch((error) => ({

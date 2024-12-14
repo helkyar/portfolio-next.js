@@ -3,6 +3,7 @@ import ThemeToggle from '@/features/layout/components/theme-toggle'
 import { Locale } from '@/data/constants'
 import { Link } from '@/i18n/routing'
 import { getTranslation } from '@/lib/translations'
+import { envConfig } from '@/lib/env-config'
 
 type PropTypes = {
   readonly locale: Locale
@@ -10,7 +11,7 @@ type PropTypes = {
 
 export default async function Header({ locale }: PropTypes) {
   const { t } = await getTranslation('LayoutPage.Header')
-  const hasContact = process.env.SHOW_CONTACT
+  const hasContact = envConfig.showContact
   return (
     <header className='fixed inset-x-0 top-0 z-50 bg-background/75 py-6 backdrop-blur-sm'>
       <nav className='max-w-3x1 container mx-auto flex w-full items-center justify-around'>
